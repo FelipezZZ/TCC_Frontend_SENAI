@@ -12,7 +12,6 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/Css.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
@@ -42,6 +41,7 @@
 	%>
 
 	<div class="container-fluid" id="">
+		<input type="text" id="txtBusca" placeholder="Buscar... " />
 		<div class="row">
 			<div class="col-2"></div>
 			<div class="col-8">
@@ -54,7 +54,7 @@
 			      			<th width="25%" scope="col">Verificar</th>
 			    		</tr>
 					</thead>
-					<tbody>
+					<tbody id="tbody">
 					<%
 						String listarPessoas = "kkk";
 						
@@ -91,6 +91,7 @@
       						</td>
 						</tr>
 					<%
+					
 						}
 					}
 					%>
@@ -100,10 +101,33 @@
 			<div class="col-2"></div>
 		</div>	
 	</div>
-
+	
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script>
+
+	document.getElementById("txtBusca").addEventListener("keyup",function(){
+		
+		var busca = document.getElementById("txtBusca").value.toLowerCase();
+		for(var i = 0; i < tbody.childNodes.length; i++){//Acessa as linhas
+			var achou = false;
+			var tr = tbody.children[i];
+			var td = tr.children;
+			for(var j = 0; j < td.length; j++){//Acessa as colunas
+				var value = td[1].innerText.toLowerCase();
+				if(value.indexOf(busca) >= 0){
+					achou = true;
+				}
+			}
+			if(achou){
+				tr.style.display = "table-row";
+			} else{
+				tr.style.display = "none";
+			}
+		}		
+		
+		
+	});
 
 </script>
 </body>

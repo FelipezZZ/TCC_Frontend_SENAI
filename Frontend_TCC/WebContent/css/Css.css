@@ -1,0 +1,25 @@
+@CHARSET "ISO-8859-1";
+
+body {
+    background-color: MistyRose;
+}
+
+#divFormLogin{
+	margin-top: 12%;
+	padding: 2%;
+	background-color: white;
+	border-radius: 10px;
+}
+
+#divFormCadastro{
+	margin-top: 12%;
+	padding: 2%;
+	background-color: white;
+	border-radius: 10px;
+}
+
+#divTabelaVerificar{
+	margin-top: 1%;
+	padding: 2%;
+	border-radius: 10px;
+}

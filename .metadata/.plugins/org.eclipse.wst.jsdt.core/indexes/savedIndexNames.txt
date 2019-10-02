@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\SENAI\TCC_Frontend_SENAI\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+849076762.index
+4078346167.index
+628404866.index
+2707525365.index
+752731006.index
+2175473190.index

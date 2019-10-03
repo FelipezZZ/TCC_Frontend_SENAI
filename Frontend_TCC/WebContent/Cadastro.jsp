@@ -18,11 +18,10 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-none">
+	  <a class="navbar-brand" href="Home.jsp">Auxilio Pa Kbssa</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Alterna navegação">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
-	 <a class="navbar-brand" href="Home.jsp" id="navbrand"><img src="imgs/cerebru.gif" 
-  		class="img-fluid" height="100" width="100" id="logo"></a>
 	
 	  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 	    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -48,22 +47,24 @@
 	  </div>
 	</nav>
 	
-			<div class="container" style="width: 800px" id="divFormCadastro">
-			<h3 style="text-align: center">Cadastre-se</h3>
-			<br>
-			<form method="post" action="#">
-				<input type="text" placeholder="Nome" name="nome" id="nome" class="form-control"> 
-				<br> 
-				<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <label class="input-group-text" for="inputGroupSelect01">Selecione</label>
-  </div>
-  <select class="custom-select" id="inputGroupSelect01">
-    <option value="1">Paciente</option>
-    <option value="2">Professor</option>
-    <option value="3">Aluno</option>
-  </select>
-</div>
+	<div class="container" id="divFormCadastro">
+		<form method="post" action="#">
+
+			
+			  
+			<center>	
+			<div class="form-check form-check-inline">
+  				<input class="form-check-input" type="radio" name="rbFuncionario" id="rbFuncionario" value="1">
+  				<label class="form-check-label" for="inlineRadio1">Funcionário</label>
+			</div>
+				<div class="form-check form-check-inline">
+  				<input class="form-check-input" type="radio" name="rbPaciente" id="rbFuncionario" value="2">
+  				<label class="form-check-label" for="inlineRadio2">Paciente</label>
+			</div>
+			</center>	
+			
+			<input type="text" placeholder="Nome" name="nome" id="nome" class="form-control">	
+				
 				<input type="text" placeholder="Login" name="login" id="loginl" class="form-control">
 				
 				<!--<small id="emailHelp" class="form-text text-muted">Nós nunca compartilharemos esse e-mail com ninguém.</small>

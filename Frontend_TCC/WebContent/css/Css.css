@@ -12,6 +12,7 @@ body {
 }
 
 #divFormCadastro{
+	width: 20%;
 	margin-top: 12%;
 	padding: 2%;
 	background-color: white;

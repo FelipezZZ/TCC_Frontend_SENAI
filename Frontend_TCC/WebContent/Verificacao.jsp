@@ -59,7 +59,7 @@
 						String listarPessoas = "kkk";
 						
 						if (listarPessoas != null) {
-						String parametros =	"acao="+"listarPessoa";
+						String parametros =	"acao="+"listarNaoVerificados";
 							
 						URL url = new URL("http://localhost:8080/ProjetoPsicologoBackEnd/ProcessaPessoa");
 						
@@ -75,7 +75,7 @@
 						
 						String linha = "";
 						JSONObject obj;
-						while ((linha = br.readLine()) != null) {
+						while ((linha = br.readLine()) != null & linha != "") {
 						obj = new JSONObject(linha);
 					%>
 						<tr>
@@ -91,7 +91,6 @@
       						</td>
 						</tr>
 					<%
-					
 						}
 					}
 					%>

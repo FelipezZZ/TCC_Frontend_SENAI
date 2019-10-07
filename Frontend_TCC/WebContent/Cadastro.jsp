@@ -17,6 +17,44 @@
 </head>
 <body>
 
+	<%
+		String tipoperfil = request.getParameter("rbTipoperfil");
+		String nome = request.getParameter("nome");
+		String login = request.getParameter("login");
+		String nomeusuario = request.getParameter("nomeusuario");
+		String identidade = request.getParameter("identidade");
+		String senha = request.getParameter("senha");
+		String csenha = request.getParameter("csenha");
+		
+		String acao = request.getParameter("acao");
+		
+		if(acao != null){
+			String parametros = "tipoPerf=" + tipoperfil + "&nome=" + nome + "&login=" + login + "&nickname=" + nomeusuario + "&identidade" + identidade + "&senha=" + senha + "&csenha=" + csenha
+					+ "&acao=" + acao;
+			
+			URL url = new URL("http://localhost:8080/ProjetoPsicologoBackEnd/ProcessaPessoa");
+
+			HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+			con.setRequestMethod("POST");
+			con.setDoOutput(true);
+
+			DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+			wr.writeBytes(parametros);
+
+			BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+			String apnd = "", linha = "";
+
+			while ((linha = br.readLine()) != null)
+				apnd += linha;
+
+			JSONObject obj = new JSONObject();
+			obj.put("status", apnd);			
+			
+		}
+	%>
+
 	<nav class="navbar navbar-expand-lg navbar-light bg-none">
 	  <a class="navbar-brand" href="Home.jsp">Auxilio Pa Kbssa</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Alterna navegação">
@@ -46,51 +84,47 @@
 	    </form>
 	  </div>
 	</nav>
-	
-	<div class="container" id="divFormCadastro">
-		<form method="post" action="#">
-
 			
-			  
-			<center>	
-			<div class="form-check form-check-inline">
-  				<input class="form-check-input" type="radio" name="rbFuncionario" id="rbFuncionario" value="1">
-  				<label class="form-check-label" for="inlineRadio1">Funcionário</label>
-			</div>
-				<div class="form-check form-check-inline">
-  				<input class="form-check-input" type="radio" name="rbPaciente" id="rbFuncionario" value="2">
-  				<label class="form-check-label" for="inlineRadio2">Paciente</label>
-			</div>
-			</center>	
+			<form method="post" action="#">
 			
-			<input type="text" placeholder="Nome" name="nome" id="nome" class="form-control">	
-				
-				<input type="text" placeholder="Login" name="login" id="loginl" class="form-control">
-				
-				<!--<small id="emailHelp" class="form-text text-muted">Nós nunca compartilharemos esse e-mail com ninguém.</small>
-				
-				<br>
-				
-				<input type="text" placeholder="Telefone" name="telefone" id="tel" class="form-control">--> 
-				<br> 
-				<input type="password" placeholder="Senha" name="senha" id="senha" class="form-control">
-				<br>
-				<input type="password" placeholder="Confirmar Senha" name="csenha" id="csenha" class="form-control">
-				<small id="emailHelp" class="form-text text-muted">Nunca compartilhe sua senha com ninguém.</small>
-				
-				<br>
-				
-				<!--<div class="form-group form-check">
-					<input type="checkbox" class="form-check-input" id="exampleCheck1">
-					<label class="form-check-label" for="exampleCheck1">Concordo com os Termos de Licença.</label>
-				</div>-->
-				
-				<button type="submit" id="salvar" class="btn btn-lightblue">Salvar</button>
-				
-				<a class="btn btn-outline-info" role="button" href="Login.jsp" aria-pressed="true">Clique aqui se possuir uma conta...</a>
-				
+			<input type="hidden" name="acao" value="cadastrarPessoa">
+			
+			<div class="card" style="width: 20rem; margin: auto;">
+			  <div class="card-body">
+			  	<center>
+			    <h5 class="card-title">Cadastro</h5>
+			    
+			    <form>
+					<div class="form-check form-check-inline">
+		  				<input class="form-check-input" type="radio" name="rbTipoperfil" id="rbFuncionario" value="1">
+		  				<label class="form-check-label" for="inlineRadio1">Funcionário</label>
+					</div>
+					<div class="form-check form-check-inline">
+		  				<input class="form-check-input" type="radio" name="rbTipoperfil" id="rbPaciente" value="2">
+		  				<label class="form-check-label" for="inlineRadio2">Paciente</label>
+					</div>
+					<p>
+			  	</form>
+			  	</center>
+			  	
+			  	<input type="text" placeholder="Nome" name="nome" id="nome" class="form-control">
+				<p>
+				<p>
+			  	<input type="text" placeholder="Login" name="login" id="login" class="form-control">
+			  	<p>
+			  	<input type="text" placeholder="Nome de Usuario" name="nomeusuario" id="nomeusuario" class="form-control">
+			  	<p>
+			  	<input type="text" placeholder="Identidade" name="identidade" id="identidade" class="form-control">
+			  	<p>
+			  	<input type="password" placeholder="Senha" name="senha" id="senha" class="form-control">
+			  	<p>
+			  	<input type="password" placeholder="Confirmar Senha" name="csenha" id="csenha" class="form-control">
+			  	<p>
+			  	<input class="btn btn-outline-success" type="submit" value="Cadastre-se"/>
+			  	
+			  </div>
+			</div>
 			</form>
-		</div>
 	
 	<script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

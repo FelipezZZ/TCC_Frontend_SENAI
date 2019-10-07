@@ -17,33 +17,19 @@
 </head>
 <body>
 			
-			<div class="card" style="width: 20rem; margin: auto;">
+			<div class="card" style="width: 50rem; margin: auto; height: 25rem;">
 			  <div class="card-body">
-			    <h5 class="card-title">Cadastro</h5>
-			    
-			    <form>
-					<div class="form-check form-check-inline">
-		  				<input class="form-check-input" type="radio" name="rbFuncionario" id="rbFuncionario" value="1">
-		  				<label class="form-check-label" for="inlineRadio1">Funcionário</label>
-					</div>
-					<div class="form-check form-check-inline">
-		  				<input class="form-check-input" type="radio" name="rbPaciente" id="rbFuncionario" value="2">
-		  				<label class="form-check-label" for="inlineRadio2">Paciente</label>
-					</div>
-					<p>
-			  	</form>
-			  	 
-			  	<input type="text" placeholder="Nome" name="nome" id="nome" class="form-control">
-				<p>
-				<p>
-			  	<input type="text" placeholder="Login" name="login" id="login" class="form-control">
+			  	<h1>Mano, tu é guei?</h1>
 			  	<p>
-			  	<input type="text" placeholder="Nome de Usuario" name="nomeusuario" id="nomeusuario" class="form-control">
 			  	<p>
-			  	<input type="password" placeholder="Senha" name="senha" id="senha" class="form-control">
+			  	<button type="button">So kkkkkk</button>
 			  	<p>
-			  	<input type="password" placeholder="Confirmar Senha" name="csenha" id="csenha" class="form-control">
-			  
+			  	<p>
+			  	<button type="button">Nau</button>
+			  	<p>
+			  	<button type="button">Tuquié</button>
+			  	<p>
+			  	<button type="button">Primary</button>
 			  </div>
 			</div>	
 			

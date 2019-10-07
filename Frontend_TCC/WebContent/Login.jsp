@@ -47,18 +47,23 @@
 	  </div>
 	</nav>
 	
-	<div class="container" style="width: 800px" id="divFormLogin">
-		<h3 style="text-align: center">Login</h3>
-			<br>
-		<form method="post" action="#">
-			<input type="text" name="login" class="form-control" placeholder="Digite seu usuário.." />
-			<br> 
-			<input type="password" name="senha" class="form-control" placeholder="Digite sua senha.." />
-			<br> 
-			<input class="btn btn-lightblue" type="submit" value="Entrar" />
-			<input class="btn btn-outline-info" type="submit" value="Cadastre-se"/>
-		</form>
-	</div>
+			<div class="card" style="width: 20rem; margin: auto;">
+			  <div class="card-body">
+			  	<center>
+			    	<h5 class="card-title">Login</h5>
+			  	</center>
+			  	
+				<form method="post" action="#">
+					<input type="text" name="login" class="form-control" placeholder="Digite seu usuário.." />
+					<br> 
+					<input type="password" name="senha" class="form-control" placeholder="Digite sua senha.." />
+					<br> 
+					<input class="btn btn-lightblue" type="submit" value="Entrar" />
+					<input class="btn btn-outline-info" type="submit" value="Cadastre-se"/>
+				</form>			  	
+			  
+			  </div>
+			</div>	
 	
 	<script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

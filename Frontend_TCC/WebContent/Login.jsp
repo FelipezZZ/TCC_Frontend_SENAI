@@ -16,7 +16,40 @@
 <link rel="stylesheet" href="css/Css.css">
 </head>
 <body>
+	
+	<%
+	
+		String login = request.getParameter("login");
+		String senha = request.getParameter("senha");
+		
+		String acao = request.getParameter("acao");
+		
+		if(acao != null){
+			String parametros = "login=" + login + "&senha=" + senha + "&acao=" + acao;
+			
+			URL url = new URL("http://localhost:8080/ProjetoPsicologoBackEnd/ProcessaPessoa");
 
+			HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+			con.setRequestMethod("POST");
+			con.setDoOutput(true);
+
+			DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+			wr.writeBytes(parametros);
+
+			BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+			String apnd = "", linha = "";
+
+			while ((linha = br.readLine()) != null)
+				apnd += linha;
+
+			JSONObject obj = new JSONObject();
+			obj.put("status", apnd);			
+		}
+	
+	%>
+	
 	<nav class="navbar navbar-expand-lg navbar-light bg-none">
 	  <a class="navbar-brand" href="Home.jsp">Auxilio Pa Kbssa</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Alterna navegação">
@@ -54,6 +87,9 @@
 			  	</center>
 			  	
 				<form method="post" action="#">
+					
+					<input type="hidden" name="acao" value="logarPessoa">
+				
 					<input type="text" name="login" class="form-control" placeholder="Digite seu usuário.." />
 					<br> 
 					<input type="password" name="senha" class="form-control" placeholder="Digite sua senha.." />

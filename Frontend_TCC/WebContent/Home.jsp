@@ -17,7 +17,7 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-none">
+	<nav class="navbar navbar-expand-lg navbar-light bg-none" id="navBar">
 	  <a class="navbar-brand" href="Home.jsp">Auxilio Pa Kbssa</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Alterna navegação">
 	    <span class="navbar-toggler-icon"></span>

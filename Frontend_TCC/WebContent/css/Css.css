@@ -24,3 +24,7 @@ body {
 	padding: 2%;
 	border-radius: 10px;
 }
+
+#navBar{
+	background-color: Red;
+}

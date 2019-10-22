@@ -18,7 +18,7 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-none">
-	  <a class="navbar-brand" href="Home.jsp">Auxilio Pa Kbssa</a>
+	  <a class="navbar-brand" href="Home.jsp">Help Chat</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Alterna navegação">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
@@ -40,7 +40,7 @@
        				<a class="nav-link" href="Cadastro.jsp">CADASTRAR-SE</a>
       			</a>
       			<a class="nav-item" href="https://play.google.com/store/apps/details?id=com.dts.freefireth&hl=pt_BR">
-      				<button class="btn btn-success my-2 my-sm-0" type="button">BAIXAR</button>      			      			
+      				<button class="btn btn-outline-info my-2 my-sm-0" type="button">BAIXAR</button>      			      			
 	    		</a>
 	    	</ul>
 	    </form>
@@ -59,7 +59,8 @@
 					<input type="password" name="senha" class="form-control" placeholder="Digite sua senha.." />
 					<br> 
 					<input class="btn btn-lightblue" type="submit" value="Entrar" />
-					<input class="btn btn-outline-info" type="submit" value="Cadastre-se"/>
+					<a class="nav-item" href="Cadastro.jsp"><button class="btn btn-outline-info
+      			my-2 my-sm-0" type="button">Cadastrar-se</button></a>
 				</form>			  	
 			  
 			  </div>

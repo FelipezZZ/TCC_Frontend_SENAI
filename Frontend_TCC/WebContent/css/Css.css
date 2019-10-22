@@ -1,7 +1,8 @@
 @CHARSET "ISO-8859-1";
 
 body {
-    background-color: MistyRose;
+    background: url(../imgs/fundo1.jpg) no-repeat fixed center;
+	background-size: 100% 100%;
 }
 
 #divFormLogin{

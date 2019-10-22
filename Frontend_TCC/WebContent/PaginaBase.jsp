@@ -12,8 +12,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/Css.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
 
@@ -21,7 +22,7 @@
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Alterna navegação">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
-	  <a class="navbar-brand" href="Home.jsp">Auxilio Pa Kbssa</a>
+	  <a class="navbar-brand" href="Home.jsp">Help Chat</a>
 	
 	  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 	    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -44,6 +45,8 @@
 	    		</a>
 	    	</ul>
 	    </form>
+	    
+	    
 	  </div>
 	</nav>
 	

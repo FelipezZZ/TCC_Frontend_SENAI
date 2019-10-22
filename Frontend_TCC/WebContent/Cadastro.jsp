@@ -56,8 +56,8 @@
 	%>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-none">
-	  <a class="navbar-brand" href="Home.jsp">Auxilio Pa Kbssa</a>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Alterna navegação">
+	  <a class="navbar-brand" href="Home.jsp">Help Chat</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Alterna navegaÃ§Ã£o">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
 	
@@ -77,8 +77,8 @@
       			<a class="nav-item">
        				<a class="nav-link" href="Cadastro.jsp">CADASTRAR-SE</a>
       			</a>
-      			<a class="nav-item" href="https://play.google.com/store/apps/details?id=com.dts.freefireth&hl=pt_BR">
-      				<button class="btn btn-success my-2 my-sm-0" type="button">BAIXAR</button>      			      			
+      			<a class="nav-item" href="https://play.google.com/store/apps/details?id=com.mobile.legends&hl=pt_BR">
+      				<button class="btn btn-outline-info my-2 my-sm-0" type="button">BAIXAR</button>      			      			
 	    		</a>
 	    	</ul>
 	    </form>
@@ -97,7 +97,7 @@
 			    <form>
 					<div class="form-check form-check-inline">
 		  				<input class="form-check-input" type="radio" name="rbTipoperfil" id="rbFuncionario" value="1">
-		  				<label class="form-check-label" for="inlineRadio1">Funcionário</label>
+		  				<label class="form-check-label" for="inlineRadio1">Funcionario</label>
 					</div>
 					<div class="form-check form-check-inline">
 		  				<input class="form-check-input" type="radio" name="rbTipoperfil" id="rbPaciente" value="2">
@@ -120,8 +120,29 @@
 			  	<p>
 			  	<input type="password" placeholder="Confirmar Senha" name="csenha" id="csenha" class="form-control">
 			  	<p>
-			  	<input class="btn btn-outline-success" type="submit" value="Cadastre-se"/>
+			  	<input class="btn btn-outline-info" type="button" value="Cadastre-se" data-toggle="modal" data-target="#exampleModalLong"/>
 			  	
+			  	
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  	<div class="modal-dialog" role="document">
+    	<div class="modal-content">
+      	<div class="modal-header">
+        	<h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          			<span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 			  </div>
 			</div>
 			</form>

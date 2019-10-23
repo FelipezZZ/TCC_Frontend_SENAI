@@ -1,7 +1,6 @@
 @CHARSET "ISO-8859-1";
 
 body {
-    background: url(../imgs/fundo1.jpg) no-repeat fixed center;
 	background-size: 100% 100%;
 }
 
@@ -27,5 +26,21 @@ body {
 }
 
 #navBar{
-	background-color: Red;
+	background-color: #D9E1FF;
+}
+
+#footer {
+	background-color: #D9E1FF;
+	width: 100%;
+    position: fixed;
+    bottom:0;
+    left:0;
+}
+
+#btBaixar{
+	background-color: #AAEBFF;
+}
+
+#navItem{
+	color: white; 
 }

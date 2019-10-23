@@ -50,11 +50,11 @@
 	
 	%>
 	
-	<nav class="navbar navbar-expand-lg navbar-light bg-none">
-	  <a class="navbar-brand" href="Home.jsp">Help Chat</a>
+	<nav class="navbar navbar-expand-lg navbar-light bg-none" id="navBar">
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Alterna navegação">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
+	  <a class="navbar-brand" href="Home.jsp">Help Chat</a>
 	
 	  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 	    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -64,19 +64,21 @@
 
 			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 	    		<a class="nav-item">
-       				<a class="nav-link" href="#">COMO FUNCIONA</a>
+       				<a class="nav-link" href="#" id="navItem">COMO FUNCIONA</a>
       			</a>
       			<a class="nav-item">
-       				<a class="nav-link" href="Login.jsp">ENTRAR</a>
+       				<a class="nav-link" href="Login.jsp" id="navItem">ENTRAR</a>
       			</a>
       			<a class="nav-item">
-       				<a class="nav-link" href="Cadastro.jsp">CADASTRAR-SE</a>
+       				<a class="nav-link" href="Cadastro.jsp" id="navItem">CADASTRAR-SE</a>
       			</a>
       			<a class="nav-item" href="https://play.google.com/store/apps/details?id=com.dts.freefireth&hl=pt_BR">
-      				<button class="btn btn-outline-info my-2 my-sm-0" type="button">BAIXAR</button>      			      			
+      				<button class="btn my-2 my-sm-0" type="button" id="btBaixar">BAIXAR</button>      			      			
 	    		</a>
 	    	</ul>
 	    </form>
+	    
+	    
 	  </div>
 	</nav>
 	
@@ -101,6 +103,13 @@
 			  
 			  </div>
 			</div>	
+	
+	<div id="footer">
+		<center>
+			<img src="imgs/ic_facebook.png">
+			<img src="imgs/ic_instagram.png">
+		</center>
+	</div>	
 	
 	<script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

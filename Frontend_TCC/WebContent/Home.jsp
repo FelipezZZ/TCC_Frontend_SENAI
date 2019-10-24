@@ -18,7 +18,8 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-none" id="navBar">
-	  <a class="navbar-brand" href="Home.jsp">Help Chat</a>
+	  <a class="navbar-brand" href="Home.jsp"><img src="imgs/se.png" 
+  		class="img-fluid" height="50" width="50" id="logo"></a></a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Alterna navegação">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
@@ -40,7 +41,9 @@
        				<a class="nav-link" href="Cadastro.jsp">CADASTRAR-SE</a>
       			</a>
       			<a class="nav-item" href="https://play.google.com/store/apps/details?id=com.dts.freefireth&hl=pt_BR">
-      				<button class="btn btn-success my-2 my-sm-0" type="button">BAIXAR</button>      			      			
+      				<button class="btn btn-success my-2 my-sm-0" type="button">BAIXAR</button>      		
+      				
+      					      			
 	    		</a>
 	    	</ul>
 	    </form>

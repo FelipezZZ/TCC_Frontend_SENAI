@@ -2,7 +2,7 @@
 
 body {
 	background-size: 50%;
-	background-image: url(../imgs/menteenatureza.jpg);
+/*	background-image: url(../imgs/menteenatureza.jpg);*/
 }
 
 
@@ -26,6 +26,11 @@ body {
 	margin-top: 1%;
 	padding: 2%;
 	border-radius: 10px;
+}
+#carouselExampleIndicators{
+	width: 10%;
+	height: 10%;
+	position: center;
 }
 
 #navBar{

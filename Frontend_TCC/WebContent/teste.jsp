@@ -23,39 +23,81 @@
 	    <span class="navbar-toggler-icon"></span>
 	  </button>  
 	</nav>
-	
-	<div id="carouselExampleControls" data-interval="0" class="carousel slide" data-ride="carousel">
+	 
+	 <div class="card" style="width: 80%; margin: auto; background-color: Red;">
+	 		<div id="carousel" data-interval="0" class="carousel slide" data-ride="carousel">
 	  <div class="carousel-inner">
-	    <div class="carousel-item active">
+	    <div class="carousel-item active citem">
 	      <div>
 	      	<p>
-	      	<h3>Pergunta 1</h3>
+	      	<center>
+	      		<h3>1 - Tive dificuldade de me acalmar</h3>
+	      		<div class="form-check form-check-inline">
+	      			<input class="form-check-input rbt" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="opcao1">
+  					<label class="form-check-label" for="inlineRadio1">0</label>
+	      		</div>
+	      		<div class="form-check form-check-inline">
+	      			<input class="form-check-input rbt" type="radio" name="inlineRadioOptions" id="inlineRadio" value="opcao1">
+  					<label class="form-check-label" for="inlineRadio1">0</label>
+	      		</div>
+	      		<div class="form-check form-check-inline">
+	      			<input class="form-check-input rbt" type="radio" name="inlineRadioOptions" id="inlineRadio" value="opcao1">
+  					<label class="form-check-label" for="inlineRadio1">0</label>
+	      		</div>
+	      		<div class="form-check form-check-inline">
+	      			<input class="form-check-input rbt" type="radio" name="inlineRadioOptions" id="inlineRadio" value="opcao1">
+  					<label class="form-check-label" for="inlineRadio1">0</label>
+	      		</div>	      			      		
+	      	</center>
 	      </div>
 	    </div>
-	    <div class="carousel-item">
+	    <div class="carousel-item citem">
 	      <div>
 	      	<p>
 	      	<h3>Pergunta 2</h3>
 	      </div>
 	    </div>
-	    <div class="carousel-item">
+	    <div class="carousel-item citem">
 	      <div>
 	      	<p>
 	      	<h3>Pergunta 3</h3>
 	      </div>
 	    </div>
 	  </div>
-	  <!--  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+	  
+	  <button class="carousel-control-prev" href="#carousel" data-slide="prev" id="btPrev" disabled>
 	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 	    <span class="sr-only">Anterior</span>
-	  </a> -->
-	  <!-- <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+	  </a>
+	  <button class="carousel-control-next" href="#carousel" data-slide="next" id="btNext" disabled>
 	    <span class="carousel-control-next-icon" aria-hidden="true"></span>
 	    <span class="sr-only">Próximo</span>
-	  </a> -->
+	  </a>
+	 </div>
 	 </div>
 	
 	<script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script>
+
+    	var check = document.querySelectorAll(".rbt");
+    	var btPrev = document.querySelector("#btPrev");
+    	var btNext = document.querySelector("#btNext");
+    	var citem = document.querySelector("#citem");
+    	
+        for(var i = 0; i < check.length; i++){
+            check[i].addEventListener('change', liberabt);
+        }
+
+        function liberabt(){
+            btNext.disabled = false;
+            citem.addEventListener('direction', travabt);
+        }        
+    	
+        function travabt(){
+            btNext.disabled = true;
+        }     
+        
+    </script>
 </body>
 </html>

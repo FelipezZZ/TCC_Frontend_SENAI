@@ -44,3 +44,8 @@ body {
 #navItem{
 	color: white; 
 }
+
+#carousel{
+	background-color: Red;
+	width: 100%;
+}

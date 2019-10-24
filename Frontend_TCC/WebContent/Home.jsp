@@ -18,7 +18,8 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-none" id="navBar">
-	  <a class="navbar-brand" href="Home.jsp">Help Chat</a>
+	  <a class="navbar-brand" href="Home.jsp"><img src="imgs/se.png" 
+  		class="img-fluid" height="50" width="50" id="logo"></a></a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Alterna navegação">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
@@ -40,13 +41,42 @@
        				<a class="nav-link" href="Cadastro.jsp">CADASTRAR-SE</a>
       			</a>
       			<a class="nav-item" href="https://play.google.com/store/apps/details?id=com.dts.freefireth&hl=pt_BR">
-      				<button class="btn btn-success my-2 my-sm-0" type="button">BAIXAR</button>      			      			
+      				<button class="btn btn-success my-2 my-sm-0" type="button">BAIXAR</button>      		
+      				
+      					      			
 	    		</a>
 	    	</ul>
 	    </form>
 	  </div>
+	  
 	</nav>
-	
+	<center>
+	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner teste">
+    <div class="carousel-item active">
+      <img src="imgs/po.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="imgs/pi.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+ <img src="imgs/Pesquisas.png" class="d-block w-100" alt="...">    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+	</center>
 	<script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </body>

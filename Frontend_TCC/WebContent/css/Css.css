@@ -1,8 +1,11 @@
 @CHARSET "ISO-8859-1";
 
 body {
-	background-size: 100% 100%;
+	background-size: 50%;
+/*	background-image: url(../imgs/menteenatureza.jpg);*/
 }
+
+
 
 #divFormLogin{
 	margin-top: 12%;
@@ -24,9 +27,14 @@ body {
 	padding: 2%;
 	border-radius: 10px;
 }
+#carouselExampleIndicators{
+	width: 10%;
+	height: 10%;
+	position: center;
+}
 
 #navBar{
-	background-color: #D9E1FF;
+	background-color: #E2EFFA;
 }
 
 #footer {

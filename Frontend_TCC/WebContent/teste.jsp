@@ -1,3 +1,5 @@
+<%@page import="java.util.List"%>
+<%@page import="dao.Anamnese"%>
 <%@page import="org.json.JSONObject"%>
 <%@page import="org.json.JSONArray"%>
 <%@page import="java.io.DataOutputStream"%>
@@ -16,53 +18,72 @@
 <link rel="stylesheet" href="css/Css.css">
 </head>
 <body>
-
-	<nav class="navbar navbar-expand-lg navbar-light bg-none" id="navBar">
-	  <a class="navbar-brand" href="Home.jsp">Help Chat</a>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Alterna navegação">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>  
-	</nav>
 	 
-	 <div class="card" style="width: 80%; margin: auto; background-color: Red;">
-	 		<div id="carousel" data-interval="0" class="carousel slide" data-ride="carousel">
-	  <div class="carousel-inner">
+	 <div class="card" id="anamnese" style="width: 60%; margin: auto; background-color: Yellow; margin-top: 2%;">
+	 <div id="carousel" data-interval="0" class="carousel slide" data-ride="carousel">
+	 <div class="carousel-inner">
+	  	<%
+			Anamnese anm = new Anamnese();
+		
+			List<String> perguntas = anm.anamnese();
+	  	%>
 	    <div class="carousel-item active citem">
 	      <div>
 	      	<p>
 	      	<center>
-	      		<h3>1 - Tive dificuldade de me acalmar</h3>
+	      		<h3><%=perguntas.get(0) %></h3>
 	      		<div class="form-check form-check-inline">
-	      			<input class="form-check-input rbt" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="opcao1">
-  					<label class="form-check-label" for="inlineRadio1">0</label>
+	      			<input class="form-check-input rbt" type="radio" name="opcao0" id="op0" value="opcao0">
+  					<label class="form-check-label" for="op0">0</label>
 	      		</div>
 	      		<div class="form-check form-check-inline">
-	      			<input class="form-check-input rbt" type="radio" name="inlineRadioOptions" id="inlineRadio" value="opcao1">
-  					<label class="form-check-label" for="inlineRadio1">0</label>
+	      			<input class="form-check-input rbt" type="radio" name="opcao1" id="op1" value="opcao1">
+  					<label class="form-check-label" for="op1">1</label>
 	      		</div>
 	      		<div class="form-check form-check-inline">
-	      			<input class="form-check-input rbt" type="radio" name="inlineRadioOptions" id="inlineRadio" value="opcao1">
-  					<label class="form-check-label" for="inlineRadio1">0</label>
+	      			<input class="form-check-input rbt" type="radio" name="opcao2" id="op2" value="opcao2">
+  					<label class="form-check-label" for="op2">2</label>
 	      		</div>
 	      		<div class="form-check form-check-inline">
-	      			<input class="form-check-input rbt" type="radio" name="inlineRadioOptions" id="inlineRadio" value="opcao1">
-  					<label class="form-check-label" for="inlineRadio1">0</label>
+	      			<input class="form-check-input rbt" type="radio" name="opcao3" id="op3" value="opcao3">
+  					<label class="form-check-label" for="op3">3</label>
 	      		</div>	      			      		
 	      	</center>
 	      </div>
 	    </div>
+		<%
+  			int i;				
+  							
+  			for(i = 1; i <= 20; i++){
+  				
+		%>
 	    <div class="carousel-item citem">
 	      <div>
 	      	<p>
-	      	<h3>Pergunta 2</h3>
+	      	<center>
+	      	<h3><%=perguntas.get(i) %></h3>
+	      	<div class="form-check form-check-inline">
+	      		<input class="form-check-input rbt" type="radio" name="opcao0" id="op0" value="opcao0">
+  				<label class="form-check-label" for="op0">0</label>
+	     	</div>
+	     	<div class="form-check form-check-inline">
+	      		<input class="form-check-input rbt" type="radio" name="opcao1" id="op1" value="opcao1">
+  				<label class="form-check-label" for="op1">1</label>
+	     	</div>
+	      	<div class="form-check form-check-inline">
+	      		<input class="form-check-input rbt" type="radio" name="opcao2" id="op2" value="opcao2">
+  				<label class="form-check-label" for="op2">2</label>
+	      	</div>
+	      	<div class="form-check form-check-inline">
+	      		<input class="form-check-input rbt" type="radio" name="opcao3" id="op3" value="opcao3">
+  				<label class="form-check-label" for="op3">3</label>
+	      	</div>
+	      	</center>	      	
 	      </div>
 	    </div>
-	    <div class="carousel-item citem">
-	      <div>
-	      	<p>
-	      	<h3>Pergunta 3</h3>
-	      </div>
-	    </div>
+	    <%	
+  			}
+	    %>
 	  </div>
 	  
 	  <button class="carousel-control-prev" href="#carousel" data-slide="prev" id="btPrev" disabled>
@@ -83,7 +104,7 @@
     	var check = document.querySelectorAll(".rbt");
     	var btPrev = document.querySelector("#btPrev");
     	var btNext = document.querySelector("#btNext");
-    	var citem = document.querySelector("#citem");
+    	var citem = document.querySelector(".citem");
     	
         for(var i = 0; i < check.length; i++){
             check[i].addEventListener('change', liberabt);
@@ -91,7 +112,7 @@
 
         function liberabt(){
             btNext.disabled = false;
-            citem.addEventListener('direction', travabt);
+            citem.addEventListener('', travabt);
         }        
     	
         function travabt(){

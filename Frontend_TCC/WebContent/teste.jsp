@@ -19,7 +19,7 @@
 </head>
 <body>
 	 
-	 <div class="card" id="anamnese" style="width: 60%; margin: auto; background-color: Yellow; margin-top: 2%;">
+	 <div class="card" id="anamnese">
 	 <div id="carousel" data-interval="0" class="carousel slide" data-ride="carousel">
 	 <div class="carousel-inner">
 	  	<%

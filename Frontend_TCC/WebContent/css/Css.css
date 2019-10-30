@@ -2,7 +2,7 @@
 
 body {
 	background-size: 50%;
-/*	background-image: url(../imgs/menteenatureza.jpg);*/
+	background-image: url("imgs/bgps.png");
 }
 
 
@@ -53,6 +53,11 @@ body {
 	color: white; 
 }
 
+#anamnese{
+	margin-top: 12%;
+	background-color: #adb5ff;
+}
+
 #carousel{
-	width: 100%;
+	background-color: #D9E1FF;
 }

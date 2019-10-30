@@ -18,8 +18,8 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-none" id="navBar">
-	  <a class="navbar-brand" href="Home.jsp"><img src="imgs/se.png" 
-  		class="img-fluid" height="50" width="50" id="logo"></a></a>
+	  <a class="navbar-brand" href="Home.jsp"><img src="imgs/Logo.png" 
+  		class="img-fluid" height="75" width="75" id="logo"></a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Alterna navegação">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
@@ -47,8 +47,7 @@
 	    		</a>
 	    	</ul>
 	    </form>
-	  </div>
-	  
+	  </div>  
 	</nav>
 	<center>
 	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

@@ -152,7 +152,6 @@
 	<div id="footer">
 		<center>
 			<img src="imgs/ic_facebook.png">
-			<img src="imgs/ic_instagram.png">
 		</center>
 	</div>
 	

@@ -59,7 +59,9 @@
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Alterna navegação">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
-	  <a class="navbar-brand" href="Home.jsp">Help Chat</a>
+	   <a class="navbar-brand" href="Home.jsp"><img src="imgs/Logo.png" 
+  		class="img-fluid" height="75" width="75" id="logo"></a>
+
 	
 	  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 	    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -91,7 +93,7 @@
 			
 			<input type="hidden" name="acao" value="cadastrarPessoa">
 			
-			<div class="card" style="width: 20rem; margin: auto;">
+			<div class="card" style="width: 20rem; margin: auto; margin-top: 5%">
 			  <div class="card-body">
 			  	<center>
 			    <h5 class="card-title">Cadastro</h5>
@@ -150,8 +152,10 @@
 			</form>
 	
 	<div id="footer">
+							
 		<center>
-			<img src="imgs/ic_facebook.png">
+			<img src="imgs/fb.png">
+			<img src="imgs/gmailmini.png">
 		</center>
 	</div>
 	

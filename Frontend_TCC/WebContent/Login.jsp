@@ -54,7 +54,8 @@
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Alterna navegação">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
-	  <a class="navbar-brand" href="Home.jsp">Help Chat</a>
+  <a class="navbar-brand" href="Home.jsp"><img src="imgs/Logo.png" 
+  		class="img-fluid" height="75" width="75" id="logo"></a>
 	
 	  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 	    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -72,6 +73,7 @@
       			<a class="nav-item">
        				<a class="nav-link" href="Cadastro.jsp" id="navItem">CADASTRAR-SE</a>
       			</a>
+      			
       			<a class="nav-item" href="https://play.google.com/store/apps/details?id=com.dts.freefireth&hl=pt_BR">
       				<button class="btn my-2 my-sm-0" type="button" id="btBaixar">BAIXAR</button>      			      			
 	    		</a>
@@ -82,7 +84,7 @@
 	  </div>
 	</nav>
 	
-			<div class="card" style="width: 20rem; margin: auto;">
+			<div class="card" style="width: 20rem; margin: auto; margin-top: 10% ">
 			  <div class="card-body">
 			  	<center>
 			    	<h5 class="card-title">Login</h5>
@@ -97,19 +99,92 @@
 					<input type="password" name="senha" class="form-control" placeholder="Digite sua senha.." />
 					<br> 
 					<input class="btn btn-lightblue" type="submit" value="Entrar" />
-					<a class="nav-item" href="Cadastro.jsp"><button class="btn btn-outline-info
-      			my-2 my-sm-0" type="button">Cadastrar-se</button></a>
+					<input class="btn btn-outline-info" type="button" value="Cadastre-se" data-toggle="modal" data-target="#exampleModalLong"/>
+					<div>
+					<img src="imgs/logarfb.png" class="img-fluid" height="30" width="30" margin id="logarfb">
+					</div>
+					<!-- Modal -->
+					
+	<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" style="margin: auto; margin-top: 9%" >
+  	<div class="modal-dialog" role="document">
+    	<div class="modal-content">
+      	<div class="modal-header">
+        	<h5 class="modal-title" id="exampleModalLongTitle"><img src="imgs/Logo.png" 
+  		class="img-fluid" height="75" width="75" id="logo"></a> Bem-vindo(a) ao Projeto </h5>
+        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          			<span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <center>  <form>
+					<div class="form-check form-check-inline">
+		  				<input class="form-check-input" type="radio" name="rbTipoperfil" id="rbFuncionario" value="1">
+		  				<label class="form-check-label" for="inlineRadio1">Funcionario</label>
+					</div>
+					<div class="form-check form-check-inline">
+		  				<input class="form-check-input" type="radio" name="rbTipoperfil" id="rbPaciente" value="2">
+		  				<label class="form-check-label" for="inlineRadio2">Paciente</label>
+					</div>
+					<p>
+			  	</form> </center>
+	<center><div style="width:70%">	  	
+       <input type="text" name="login" class="form-control" placeholder="Digite seu usuário.." />
+       <p>
+       <p>
+       <input type="text" name="Senha" class="form-control" placeholder="Digite sua Senha.." />
+       <p>
+       <input type="text" name="Csenha" class="form-control" placeholder="Confirme Sua Senha.." />
+       <p>
+       <input type="text" name="Email" class="form-control" placeholder="Digite seu Email.." />
+       <p>
+      <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Sexo :</label>
+  </div>
+  <select class="custom-select" id="inputGroupSelect01">
+    <option selected>Não Informar...</option>
+    <option value="1">Masculino</option>
+    <option value="2">Feminino</option>
+    
+
+  </select>
+</div>
+</div></center>
+
+<center><button type="button" class="btn btn-outline-primary-dark" height="300" width="300">Cadastre-se</button></center>
+<p>
+<center> Ou </center>
+<p>
+<center>
+<div>
+<img src="imgs/logar.png" 
+  		class="img-fluid" height="300" width="300" id="logo2">
+	</div>
+	</center>
+<p>
+<center>
+<div>
+<img src="imgs/logargoogle.png" 
+  		class="img-fluid" height="300" width="300" id="logo3">
+	</div>
+	</center>	
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+      </div>
+    </div>
+  </div>
+</div>
+			  </div>
+			</div>
+			</form>
+	
 				</form>			  	
 			  
 			  </div>
 			</div>	
 	
-	<div id="footer">
-		<center>
-			<img src="imgs/ic_facebook.png">
-			<img src="imgs/ic_instagram.png">
-		</center>
-	</div>	
 	
 	<script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

@@ -61,3 +61,22 @@ body {
 #carousel{
 	background-color: #D9E1FF;
 }
+
+.btMedia {
+	background-repeat: no-repeat;
+	height: 40px;
+	width: 284px;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+#btGoogle {
+	background-image: url("../imgs/logargoogle.png");
+}
+#btFacebook {
+	background-image: url("../imgs/cfacebook.png");
+}

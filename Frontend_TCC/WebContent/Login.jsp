@@ -157,15 +157,13 @@
 <p>
 <center>
 <div>
-<img src="imgs/logar.png" 
-  		class="img-fluid" height="300" width="300" id="logo2">
+		<button type="submit" class="btMedia" id="btFacebook"  width="300"></button>
 	</div>
 	</center>
 <p>
 <center>
 <div>
-<img src="imgs/logargoogle.png" 
-  		class="img-fluid" height="300" width="300" id="logo3">
+		<button type="submit" class="btMedia" id="btGoogle" width="300"></button>
 	</div>
 	</center>	
 

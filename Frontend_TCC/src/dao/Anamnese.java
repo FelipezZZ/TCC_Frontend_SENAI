@@ -10,10 +10,10 @@ public class Anamnese {
 		
 		List<String> perguntas = new ArrayList<>();
 		
-		perguntas.add("Tive dificuldade de me acalmar");
-		perguntas.add("Minha boca ficou seca");
-		perguntas.add("Nao tive nenhum sentimento positivo");
-		perguntas.add("Em alguns momentos tive dificuldade de respirar (chiado e falta de ar sem esforço físico)");
+		perguntas.add("Tive dificuldade de me acalmar;teste");
+		perguntas.add("Minha boca ficou seca;teste1");
+		perguntas.add("Nao tive nenhum sentimento positivo;teste2");
+		perguntas.add("Em alguns momentos tive dificuldade de respirar (chiado e falta de ar sem esforço físico);teste3");
 		perguntas.add("Não consegui ter iniciativa para fazer as coisas");
 		perguntas.add("Exagerei intencionalmente ao reagir a situações");
 		perguntas.add("Tive tremedeira (por exemplo, nas mãos)");

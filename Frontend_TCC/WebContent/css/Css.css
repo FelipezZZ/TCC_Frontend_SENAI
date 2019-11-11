@@ -80,3 +80,21 @@ body {
 #btFacebook {
 	background-image: url("../imgs/cfacebook.png");
 }
+
+.btAvatar {
+	
+	background-repeat: no-repeat;
+	background-size: 90px;
+	height: 90px;
+	width: 90px;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+	
+}
+#btAvatar {
+	background-image: url("../imgs/avatarO.png");
+}

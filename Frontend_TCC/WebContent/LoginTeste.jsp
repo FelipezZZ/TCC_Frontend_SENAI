@@ -14,7 +14,6 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/Css.css">
-<link rel="stylesheet" href="css/Css2.css">
 </head>
 <body>
 	
@@ -119,50 +118,26 @@ There are many variations of passages of Lorem Ipsum available, but the majority
 	    
 	  </div>
 	</nav>
-		<div class="card" style="width: 30rem; margin: auto; margin-top: 4%; padding:2%">
-			<div class="container" id="containerTeste">
-  <div class="row">
-
-    <div class="main">
-
-      <h3>Entre, ou <a href="#" data-toggle="modal" data-target="#exampleModalLong">Cadastre-se </a> </h3>
-      <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-6">
-          <a href="#" class="btn btn-lg btn-primary btn-block">Facebook</a>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-6">
-          <a href="#" class="btn btn-lg btn-info btn-block">Google</a>
-        </div>
-      </div>
-      <div class="login-or">
-        <hr class="hr-or">
-        <span class="span-or">or</span>
-      </div>
-
-      <form role="form">
-        <div class="form-group">
-          <label for="inputUsernameEmail">Usuario Ou Email :</label>
-          <input type="text" class="form-control "placeholder="Digite seu usuário.." id="inputUsernameEmail">
-        </div>
-        <div class="form-group">
-          <label for="inputPassword">Senha :</label>
-          <input type="password" class="form-control" placeholder="Digite sua senha.."  id="inputPassword">
-        </div>
-        <div class="checkbox pull-right">
-          <label>
-            <input type="checkbox">
-            Lembrar-me </label>
-        </div>
-        <button type="submit" class="btn btn btn-primary">
-          Entrar
-        </button>
-      </form>
-    
-    </div>
-    </div>
-  </div>
-</div>
+	
+			<div class="card" style="width: 20rem; margin: auto; margin-top: 10% ">
+			  <div class="card-body">
+			  	<center>
+			    	<h5 class="card-title">Login</h5>
+			  	</center>
+			  	
+				<form method="post" action="#">
 					
+					<input type="hidden" name="acao" value="logarPessoa">
+				
+					<input type="text" name="login" class="form-control" placeholder="Digite seu usuário.." />
+					<br> 
+					<input type="password" name="senha" class="form-control" placeholder="Digite sua senha.." />
+					<br> 
+					<input class="btn btn-lightblue" type="submit" value="Entrar" />
+					<input class="btn btn-outline-info" type="button" value="Cadastre-se" data-toggle="modal" data-target="#exampleModalLong"/>
+					<div>
+					<img src="imgs/logarfb.png" class="img-fluid" height="30" width="30" margin id="logarfb">
+					</div>
 					<!-- Modal -->
 					
 	<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" style="margin: auto; margin-top: 9%" >

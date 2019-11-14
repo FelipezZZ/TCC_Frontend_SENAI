@@ -52,6 +52,12 @@ body {
 #navItem{
 	color: white; 
 }
+.carousel-item {
+	background-color: #d7cfff;
+}
+.carousel-item img {
+	opacity : 0.5;
+}
 
 #anamnese{
 	margin-top: 12%;
@@ -97,5 +103,21 @@ body {
 }
 #btAvatar {
 	background-image: url("../imgs/avatarO.png");
+}
+
+.btStore {
+	background-repeat: no-repeat;
+	color: inherit;
+	border: none;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+
+	
+}
+
+#btPlay {
+	background-image: url("../imgs/playstore.png");
+	background-size:10px;
 }
 

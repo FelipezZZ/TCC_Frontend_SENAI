@@ -36,7 +36,7 @@
   COMO FUNCIONA
 </button>
 
-<!-- Modal -->
+<!-- Modal --> 
 <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
@@ -77,7 +77,9 @@ There are many variations of passages of Lorem Ipsum available, but the majority
        				<a class="nav-link" href="Cadastro.jsp">CADASTRAR-SE</a>
       			</a>
       			<a class="nav-item" href="https://play.google.com/store/apps/details?id=com.dts.freefireth&hl=pt_BR">
-      				<button class="btn btn-success my-2 my-sm-0" type="button">BAIXAR</button>      		
+      				<div>
+		<button type="submit" class="btStore" id="btPlay"></button>
+	</div>     		
       				
       					      			
 	    		</a>

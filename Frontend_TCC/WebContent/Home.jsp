@@ -73,9 +73,6 @@ There are many variations of passages of Lorem Ipsum available, but the majority
       			<a class="nav-item">
        				<a class="nav-link" href="Login.jsp">ENTRAR</a>
       			</a>
-      			<a class="nav-item">
-       				<a class="nav-link" href="Cadastro.jsp">CADASTRAR-SE</a>
-      			</a>
       			<a class="nav-item" href="https://play.google.com/store/apps/details?id=com.dts.freefireth&hl=pt_BR">
       				<div>
 		<button type="submit" class="btStore" id="btPlay"></button>
@@ -86,8 +83,7 @@ There are many variations of passages of Lorem Ipsum available, but the majority
 	    	</ul>
 	    </form>
 	  </div>  
-	</nav>
-	<center>
+	</nav>	<center>
 	<div id="meuCarousel" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#meuCarousel" data-slide-to="0" class="active"></li>

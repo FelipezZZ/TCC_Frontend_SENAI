@@ -7,56 +7,28 @@
 <%@page import="java.net.HttpURLConnection"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" import="java.net.URL"%>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/Css.css">
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/Css.css">
-<link rel="stylesheet" href="css/Css2.css">
+<title>Home</title>
+
 </head>
 <body>
-	
-	<%
-	
-		String login = request.getParameter("login");
-		String senha = request.getParameter("senha");
-		
-		String acao = request.getParameter("acao");
-		
-		if(acao != null){
-			String parametros = "login=" + login + "&senha=" + senha + "&acao=" + acao;
-			
-			URL url = new URL("http://localhost:8080/ProjetoPsicologoBackEnd/ProcessaPessoa");
 
-			HttpURLConnection con = (HttpURLConnection) url.openConnection();
-
-			con.setRequestMethod("POST");
-			con.setDoOutput(true);
-
-			DataOutputStream wr = new DataOutputStream(con.getOutputStream());
-			wr.writeBytes(parametros);
-
-			BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
-
-			String apnd = "", linha = "";
-
-			while ((linha = br.readLine()) != null)
-				apnd += linha;
-
-			JSONObject obj = new JSONObject();
-			obj.put("status", apnd);			
-		}
-	
-	%>
-	
 	<nav class="navbar navbar-expand-lg navbar-light bg-none" id="navBar">
+	  <a class="navbar-brand" href="Home.jsp"><img src="imgs/Logo.png" 
+  		class="img-fluid" height="75" width="75" id="logo"></a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Alterna navegação">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
-  <a class="navbar-brand" href="Home.jsp"><img src="imgs/Logo.png" 
-  		class="img-fluid" height="75" width="75" id="logo"></a>
 	
 	  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 	    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -65,12 +37,12 @@
 	    <form class="form-inline my-2 my-lg-0">
 
 			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-	    			    		<!-- Button trigger modal -->
+	    		<!-- Button trigger modal -->
 <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModalScrollable">
   COMO FUNCIONA
 </button>
 
-<!-- Modal -->
+<!-- Modal --> 
 <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
@@ -103,67 +75,74 @@ There are many variations of passages of Lorem Ipsum available, but the majority
     </div>
   </div>
 </div>
+
       			<a class="nav-item">
-       				<a class="nav-link" href="Login.jsp" id="navItem">ENTRAR</a>
+       				<a class="nav-link" href="Login.jsp">ENTRAR</a>
       			</a>
-      		
-      			
       			<a class="nav-item" href="https://play.google.com/store/apps/details?id=com.dts.freefireth&hl=pt_BR">
-      				<button class="btn my-2 my-sm-0" type="button" id="btBaixar">BAIXAR</button>      			      			
+      				<div>
+		<button type="submit" class="btStore" id="btPlay"></button>
+	</div>     		
+      				
+      					      			
 	    		</a>
 	    	</ul>
 	    </form>
-	    
-	    
-	  </div>
+	  </div>  
 	</nav>
-		<div class="card" style="width: 30rem; margin: auto; margin-top: 4%; padding:2%">
-			<div class="container" id="containerTeste">
-  <div class="row">
+	<div class="container">
+  	
+  	
 
-    <div class="main">
+    <div class="row" style="background-color: #68ceee; height: 60px;"></div>
+    <div class="row" style="margin-left:10%">
 
-      <h3>Entre, ou <a href="#" data-toggle="modal" data-target="#exampleModalLong">Cadastre-se </a> </h3>
-      <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-6">
-          <a href="#" class="btn btn-lg btn-primary btn-block">Facebook</a>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-6">
-          <a href="#" class="btn btn-lg btn-info btn-block">Google</a>
-        </div>
-      </div>
-      <div class="login-or">
-        <hr class="hr-or">
-        <span class="span-or">or</span>
-      </div>
+        <div class="col-md-5  promo-border" style="margin-top:60px;">
+            <div class="promo-text"><img src="imgs/Logo.png" 
+  		class="img-fluid" height="" width="60" id="logo"></div>
+            <p style="font-family: calibri;
+  font-size: 20px;
+  margin-top: 25px;">
+                Como nosso Sistema funciona ?
+            </p>
 
-      <form role="form">
-        <div class="form-group">
-          <label for="inputUsernameEmail">Usuario Ou Email :</label>
-          <input type="text" class="form-control "placeholder="Digite seu usuário.." id="inputUsernameEmail">
+            <p style="  font-family: calibri;
+  font-size: 14px;
+ padding: 10px;">Nosso aplicativo funciona como base para que estudantes de Psicologia, possam praticar, fazendo consultas grátis para pessoas necessitadas, com isso também os Estudantes podem abater seu tempo de Estágio</p>
         </div>
-        <div class="form-group">
-          <label for="inputPassword">Senha :</label>
-          <input type="password" class="form-control" placeholder="Digite sua senha.."  id="inputPassword">
+        <div class="col-md-1 "></div>
+        <div class="col-md-5 promo-border" style="margin-top:60px;">
+            <div class="promo-text"><img src="imgs/interogacao.png"></div>
+            <p style="font-family: calibri;
+  font-size: 20px;
+  margin-top: 25px;">
+                E quem Pode Utilizar?
+            </p>
+
+            <p style=" font-family: calibri;
+  font-size: 14px;
+  
+  padding: 10px;">Estudantes a partir do 4° termo da faculdade de psicologia, com seus documentos e matricula confirmada.
+  Como paciente : Qualquer pessoa que necessitar de ajuda, podendo até mesmo ser anônima. Caso contrário é necessario apenas realizar o Cadastro em nosso APP e aprovitar do nosso sistema seja na Web como no <button type="Button" href="https://play.google.com/store/apps/details?id=com.dts.freefireth&hl=pt_BR" class="btn btn-link">APP disponivel na PlayStore</button></p>
         </div>
-        <div class="checkbox pull-right">
-          <label>
-            <input type="checkbox">
-            Lembrar-me </label>
-        </div>
-        <button type="submit" class="btn btn btn-primary">
-          Entrar
-        </button>
-      </form>
-    
+
     </div>
-    </div>
-  </div>
+
+
 </div>
+
+
+<div class="row">
+    <div class="join-class">
+        <span style="font-size: 40px;">Junte-se a Nós!</span>
+    <span style="font-size: 14px;">  Em Busca de um mundo mais saudável
+   
+   
+       <button type="submit"  href="#"  data-toggle="modal" data-target="#ModalCadastrar" class="btn btn-default btn-m round">Cadastre-se</button>
+  
+   	</span>
 					
-					<!-- Modal -->
-					
-	<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" style="margin: auto; margin-top: 9%" >
+	<div class="modal fade" id="ModalCadastrar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" style="margin: auto; margin-top: 9%" >
   	<div class="modal-dialog" role="document">
     	<div class="modal-content">
       	<div class="modal-header">
@@ -240,16 +219,131 @@ There are many variations of passages of Lorem Ipsum available, but the majority
     </div>
   </div>
 </div>
-			  </div>
-			</div>
-			</form>
-	
-				</form>			  	
-			  
-			  </div>
-			</div>	
-	
-	
+
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" style="background-color: #68ceee; height: 60px;"></div>
+<div class="row" style="background-image: url('http://lcc.dotcmscloud.com/images/NewHome3.png');">
+    <p style="font-family: Calibri; font-size: 27px;text-align: center; padding-top: 50px;padding-bottom: 30px;">O que nossos usuarios dizem?</p>
+
+    <div class="col-md-12">
+        <div class="col-md-2"></div>
+        <div class="col-md-3 ">
+            <div class="comment-box">
+                <p>"App magnifico, me sinto muito melhor agora, aquele moderador Caio é um Gato"</p>
+            </div>
+            </div>
+            <div class="commnetor">
+                <p>Suzane Von Richthofen</p>
+                
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="comment-box">
+                <p>"Aenean dapibus facilisis urna lacinia bibendum. Maeceans sit amet lacinia dui. Donec vitae egestas
+                    ipsum, sit amet egestas nulla. Maecenas consectetur est ac ipsum porta tincidunt."</p>
+
+            </div>
+            <div class="commnetor">
+                <p>Jim Doe</p>
+                
+            </div>
+        </div>
+
+
+        <div class="col-md-3 ">
+            <div class="comment-box">
+                <p>"Aenean dapibus facilisis urna lacinia bibendum. Maeceans sit amet lacinia dui. Donec vitae egestas
+                    ipsum, sit amet egestas nulla. Maecenas consectetur est ac ipsum porta tincidunt."</p>
+            </div>
+            <div class="commnetor">
+                <p>Jahn Doe</p>
+     
+            </div>
+            
+        </div>
+
+
+    </div>
+</div>
+<div class="row" style="background-color: #68ceee; height: 60px;"></div>
+<div class="footer">
+
+    <div class="footerLinks">
+        <span class="footer-title"><a href="#/howitworks">Como Funciona</a></span>
+        <span class="footer-title"><a href="#/serviceoptions">Serviços</a></span>
+        <span class="footer-title"><a>Certificado</a></span>
+        <span class="footer-title"><a href="#/luxevault"></a></span>
+        
+    </div>
+
+    <div class="footerLinks">
+        <span class="footer-title"><a href="#/aboutluxe">Sobre Nós</a></span>
+        <span class="footer-title"><a href="#/faq">FAQ</a></span>
+        <span class="footer-title"><a href="#/contactluxe">Nos Contate</a></span>
+        <span class="footer-title"><a href="#/privacypolicy">Politica de Privacidade</a></span>
+        <span class="footer-title"><a href="#/termsofuse">Termos de Uso</a></span>
+    </div>
+    <div style="padding-top:5px">
+        <ul class="list-inline" style="text-align: center;">
+            <li class="social-icons"><a href="#">
+        <span class="fa-stack fa-s icon-facebook">
+          <i class="fa fa-square fa-stack-2x"></i>
+          <i class="fa fa-facebook fa-stack-1x"></i>
+        </span>
+            </a></li>
+            <li class="social-icons"><a href="#">
+        <span class="fa-stack fa-s icon-gplus">
+          <i class="fa fa-square fa-stack-2x"></i>
+          <i class="fa fa-google-plus fa-stack-1x"></i>
+        </span>
+            </a></li>
+            <li class="social-icons"><a href="#">
+        <span class="fa-stack fa-s icon-twitter">
+          <i class="fa fa-square fa-stack-2x"></i>
+          <i class="fa fa-twitter fa-stack-1x"></i>
+        </span>
+            </a></li>
+
+            <li class="social-icons"><a href="#">
+        <span class="fa-stack fa-s icon-linkedin">
+          <i class="fa fa-square fa-stack-2x"></i>
+          <i class="fa fa-linkedin fa-stack-1x"></i>
+        </span>
+            </a></li>
+            <li class="social-icons"><a href="#">
+        <span class="fa-stack fa-s icon-instagram">
+          <i class="fa fa-square fa-stack-2x"></i>
+          <i class="fa fa-instagram fa-stack-1x"></i>
+        </span>
+            </a></li>
+            <li class="social-icons"><a href="#">
+        <span class="fa-stack fa-s icon-flickr">
+          <i class="fa fa-square fa-stack-2x"></i>
+          <i class="fa fa-flickr fa-stack-1x"></i>
+        </span>
+            </a></li>
+        </ul>
+    </div>
+    <div style="text-align: center; margin: 10px 0;">
+        <img src="http://lcc.dotcmscloud.com/images/luxe.png" style="width: 6%">
+    </div>
+    
+</div>
+</div>
+
+
+</div>
+
 	<script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </body>

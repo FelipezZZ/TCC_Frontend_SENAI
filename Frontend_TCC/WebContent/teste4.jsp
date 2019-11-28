@@ -12,8 +12,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-
-<link rel="stylesheet" href="css/home.css">
+ <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> 
+ <link rel="stylesheet" href="css/home.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 	<script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -98,13 +99,13 @@ There are many variations of passages of Lorem Ipsum available, but the majority
             <div class="promo-text"><img src="imgs/Logo.png" 
   		class="img-fluid" height="" width="60" id="logo"></div>
             <p style="font-family: calibri;
-  font-size: 20px;
-  margin-top: 25px;">
+  
+  margin-top: 30px;">
                 Como nosso Sistema funciona ?
             </p>
 
-            <p style="  font-family: calibri;
-  font-size: 14px;
+            <p style="  
+  
  padding: 10px;">Nosso aplicativo funciona como base para que estudantes de Psicologia, possam praticar, fazendo consultas grátis para pessoas necessitadas, com isso também os Estudantes podem abater seu tempo de Estágio</p>
         </div>
         <div class="col-md-1 "></div>
@@ -120,7 +121,11 @@ There are many variations of passages of Lorem Ipsum available, but the majority
   font-size: 14px;
   
   padding: 10px;">Estudantes a partir do 4° termo da faculdade de psicologia, com seus documentos e matricula confirmada.
-  Como paciente : Qualquer pessoa que necessitar de ajuda, podendo até mesmo ser anônima. Caso contrário é necessario apenas realizar o Cadastro em nosso APP e aprovitar do nosso sistema seja na Web como no <button type="Button" href="https://play.google.com/store/apps/details?id=com.dts.freefireth&hl=pt_BR" class="btn btn-link">APP disponivel na PlayStore</button></p>
+  Como paciente : Qualquer pessoa que necessitar de ajuda, podendo até mesmo ser anônima. Caso contrário é necessario apenas realizar o Cadastro em nosso APP e aprovitar do nosso sistema seja na Web como no APP disponivel na PlayStore:
+  <a class="nav-item" href="https://play.google.com/store?hl=pt_BR">
+      				<button class="btn my-2 my-sm-0" type="button" id="btBaixar">Baixar Já</button>      			      			
+	    		</a>
+  
         </div>
 
     </div>
@@ -131,102 +136,19 @@ There are many variations of passages of Lorem Ipsum available, but the majority
 
 <div class="row">
     <div class="join-class">
-        <span style="font-size: 40px;">Junte-se a Nós!</span>
+        <span style="font-size: 30px;">Junte-se a Nós!</span>
     <span style="font-size: 14px;">  Em Busca de um mundo mais saudável
    
    
-       <button type="submit"  href="#"  data-toggle="modal" data-target="#ModalCadastrar" class="btn btn-default btn-m round">Cadastre-se</button>
-  
-   	</span>
-					
-	<div class="modal fade" id="ModalCadastrar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" style="margin: auto; margin-top: 9%" >
-  	<div class="modal-dialog" role="document">
-    	<div class="modal-content">
-      	<div class="modal-header">
-        	<h5 class="modal-title" id="exampleModalLongTitle"><img src="imgs/Logo.png" 
-  		class="img-fluid" height="75" width="75" id="logo"></a> Bem-vindo(a) ao Projeto </h5>
-        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          			<span aria-hidden="true">&times;</span>
-        </button>
-      </div>
       
-      <div class="modal-body">
-      
-   
-  <!--  	<center>	
-<div>
-		<button type="button" class="btAvatar" id="btAvatar"  width="300"></button>
-	</div>
-	</center>-->
-       <center>  <form>
-					<div class="form-check form-check-inline">
-		  				<input class="form-check-input" type="radio" name="rbTipoperfil" id="rbFuncionario" value="1">
-		  				<label class="form-check-label" for="inlineRadio1">Funcionario</label>
-					</div>
-					<div class="form-check form-check-inline">
-		  				<input class="form-check-input" type="radio" name="rbTipoperfil" id="rbPaciente" value="2">
-		  				<label class="form-check-label" for="inlineRadio2">Paciente</label>
-					</div>
-					<p>
-			  	</form> </center>
-	<center><div style="width:70%">	  	
-       <input type="text" name="login" class="form-control" placeholder="Digite seu usuário.." />
-       <p>
-       <p>
-       <input type="password" name="Senha" class="form-control" placeholder="Digite sua Senha.." />
-       <p>
-       <input type="password" name="Csenha" class="form-control" placeholder="Confirme Sua Senha.." />
-       <p>
-       <input type="text" name="Email" class="form-control" placeholder="Digite seu Email.." />
-       <p>
-      <div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <label class="input-group-text" for="inputGroupSelect01">Sexo :</label>
-  </div>
-  <select class="custom-select" id="inputGroupSelect01">
-    <option selected>Não Informar...</option>
-    <option value="1">Masculino</option>
-    <option value="2">Feminino</option>
-    
-
-  </select>
-</div>
-</div></center>
-
-<center><button type="button" class="btn btn-outline-primary-dark" height="300" width="300">Cadastre-se</button></center>
-<p>
-<center> Ou </center>
-<p>
-<center>
-<div>
-		<button type="submit" class="btMedia" id="btFacebook"  width="300"></button>
-	</div>
-	</center>
-<p>
-<center>
-<div>
-		<button type="submit" class="btMedia" id="btGoogle" width="300"></button>
-	</div>
-	</center>	
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-    </div>
-</div>
 
 
 
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+ 
+
+
 <div class="row" style="background-color: #68ceee; height: 60px;"></div>
 <div class="row" style="background-image: url('http://lcc.dotcmscloud.com/images/NewHome3.png');">
     <p style="font-family: Calibri; font-size: 27px;text-align: center; padding-top: 50px;padding-bottom: 30px;">O que nossos usuarios dizem?</p>
@@ -271,10 +193,13 @@ There are many variations of passages of Lorem Ipsum available, but the majority
 
 
     </div>
-</div>
+    </center>
+
 <div class="row" style="background-color: #68ceee; height: 60px;"></div>
 <div class="footer">
-
+    <div style="text-align: center; margin: 2px 0;">
+        <img src="imgs/Logo.png" style="width: 3%">
+    </div>
     <div class="footerLinks">
         <span class="footer-title"><a href="#/howitworks">Como Funciona</a></span>
         <span class="footer-title"><a href="#/serviceoptions">Serviços</a></span>
@@ -292,38 +217,38 @@ There are many variations of passages of Lorem Ipsum available, but the majority
     </div>
     <div style="padding-top:5px">
         <ul class="list-inline" style="text-align: center;">
-            <li class="social-icons"><a href="#">
+            <li class="social-icons"><a href="https://pt-br.facebook.com/">
         <span class="fa-stack fa-s icon-facebook">
           <i class="fa fa-square fa-stack-2x"></i>
           <i class="fa fa-facebook fa-stack-1x"></i>
         </span>
             </a></li>
-            <li class="social-icons"><a href="#">
+            <li class="social-icons"><a href="https://accounts.google.com/signin/v2/identifier?passive=1209600&continue=https%3A%2F%2Faboutme.google.com%2Fu%2F0%2F%3Freferer%3Dgplus&followup=https%3A%2F%2Faboutme.google.com%2Fu%2F0%2F%3Freferer%3Dgplus&flowName=GlifWebSignIn&flowEntry=ServiceLogin">
         <span class="fa-stack fa-s icon-gplus">
           <i class="fa fa-square fa-stack-2x"></i>
           <i class="fa fa-google-plus fa-stack-1x"></i>
         </span>
             </a></li>
-            <li class="social-icons"><a href="#">
+            <li class="social-icons"><a href="https://twitter.com/login?lang=pt">
         <span class="fa-stack fa-s icon-twitter">
           <i class="fa fa-square fa-stack-2x"></i>
           <i class="fa fa-twitter fa-stack-1x"></i>
         </span>
             </a></li>
 
-            <li class="social-icons"><a href="#">
+            <li class="social-icons"><a href="https://br.linkedin.com/">
         <span class="fa-stack fa-s icon-linkedin">
           <i class="fa fa-square fa-stack-2x"></i>
           <i class="fa fa-linkedin fa-stack-1x"></i>
         </span>
             </a></li>
-            <li class="social-icons"><a href="#">
+            <li class="social-icons"><a href="https://www.instagram.com/?hl=pt-br">
         <span class="fa-stack fa-s icon-instagram">
           <i class="fa fa-square fa-stack-2x"></i>
           <i class="fa fa-instagram fa-stack-1x"></i>
         </span>
             </a></li>
-            <li class="social-icons"><a href="#">
+            <li class="social-icons"><a href="https://www.flickr.com/">
         <span class="fa-stack fa-s icon-flickr">
           <i class="fa fa-square fa-stack-2x"></i>
           <i class="fa fa-flickr fa-stack-1x"></i>
@@ -331,9 +256,7 @@ There are many variations of passages of Lorem Ipsum available, but the majority
             </a></li>
         </ul>
     </div>
-    <div style="text-align: center; margin: 10px 0;">
-        <img src="http://lcc.dotcmscloud.com/images/luxe.png" style="width: 6%">
-    </div>
+
     
 </div>
 </div>

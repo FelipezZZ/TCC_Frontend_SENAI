@@ -1,139 +1,10 @@
 
-@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
-@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
-@import url(http://fonts.googleapis.com/css?family=Titillium+Web&subset=latin,latin-ext);
+
 
 @CHARSET "ISO-8859-1";
 
-body {
-	background-size: 50%;
-	background-image: url("imgs/bgps.png");
-}
 
 
-
-#divFormLogin{
-	margin-top: 12%;
-	padding: 2%;
-	background-color: white;
-	border-radius: 10px;
-}
-
-#divFormCadastro{
-	width: 20%;
-	margin-top: 12%;
-	padding: 2%;
-	background-color: white;
-	border-radius: 10px;
-}
-
-#divTabelaVerificar{
-	margin-top: 1%;
-	padding: 2%;
-	border-radius: 10px;
-}
-#carouselExampleIndicators{
-	width: 10%;
-	height: 10%;
-	position: center;
-}
-
-#navBar{
-	background-color: #E2EFFA;
-}
-
-#footer {
-	background-color: #D9E1FF;
-	width: 100%;
-    position: fixed;
-    bottom:0;
-    left:0;
-}
-
-#btBaixar{
-	background-color: #AAEBFF;
-}
-
-#navItem{
-	color: white; 
-}
-.carousel-item {
-	background-color: #d7cfff;
-}
-.carousel-item img {
-	opacity : 0.5;
-}
-
-#anamnese{
-	margin-top: 12%;
-	background-color: #adb5ff;
-}
-
-#carousel{
-	background-color: #D9E1FF;
-}
-
-.btMedia {
-	background-repeat: no-repeat;
-	height: 40px;
-	width: 284px;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
-}
-
-#btGoogle {
-	background-image: url("../imgs/logargoogle.png");
-}
-#btFacebook {
-	background-image: url("../imgs/cfacebook.png");
-}
-
-.btAvatar {
-	
-	background-repeat: no-repeat;
-	background-size: 90px;
-	height: 90px;
-	width: 90px;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
-	
-}
-#btAvatar {
-	background-image: url("../imgs/avatarO.png");
-}
-
-.btStore {
-	background-repeat: no-repeat;
-	color: inherit;
-	border: none;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
-
-	
-}
-
-#btPlay {
-	background-image: url("../imgs/playstore.png");
-	background-size:10px;
-}
-
-
-
-
-.footer-title{
-padding: 0 7px;
-font-family: Calibri;
-font-size: 16px;
-}
 .footerLinks{
    text-align: center; 
    padding: 5% 0 2% 0" 
@@ -185,72 +56,36 @@ font-size: 16px;
   padding-top: 19px;
   padding-bottom: 25px;
 }
-.video-text{
-     padding-left: 30%;
-  padding-top: 10px;
-}
-.video-button{
-     padding-left: 23%;
-  
-}
 .comment-box{
   background: #e5e5e5;
+  margin-left: 50%;
   text-align: center;
   border-radius: 5px;
   border: 2px solid lightgrey;
 }
 .plan-text{
-  font-family: calibri;
-  font-size: 13px;
+  
+  font-size: 30px;
  text-align: left;
  color:black;
- font-size:13px;
+ font-size:30px;
 }
+
 .plan-div{
     padding:2%;
     height:130px;
-}
-.price-text{
-   font-size: 12px;
-}
-.promo-border{
-   border: 2px solid lightgrey;
- float: left;
-  font-family: Calibri;
-  text-align: center;
- padding: 10px;
-  font-size: 12px;
-  border-radius: 5px; 
-}
-.promo-text{
-  background: #68ceee;
-  color: white;
-  border-radius: 30px;
-  padding-top: 10px;
-  margin-top: -40px;
-  z-index: 1000;
-  position: absolute;
-  text-align: center;
-  height:50px;
-  width:50px;
-  margin-left:40%;
-  font-size: 20px;    
-}
+
 .join-class{
    background-color: #68ceee; 
    color: white !important; 
-   font-family: calibri; 
+  
    text-align: center; 
    padding: 10px;
    margin-top:70px; 
 }
-.video-div{
-   border: 5px solid #e5e5e5; 
-    background: #f8f8f8; 
-    
-}
+
 .plan-name{
-    font-size:14px;
+    font-size:30px;
     margin-bottom:30px;
 }
 .db-padding-btm {
@@ -300,7 +135,7 @@ font-size: 16px;
         .db-pricing-eleven .price small {
             color: #B8B8B8;
             display: block;
-            font-size: 12px;
+            font-size: 30px;
             margin-top: 22px;
         }
 
@@ -322,7 +157,7 @@ font-size: 16px;
 .db-attached > .col-md-3,
 .db-attached > .col-sm-4,
 .db-attached > .col-sm-3 {
-    padding-left: 0;
+    padding-left: 50px;
     padding-right: 0;
 }
 

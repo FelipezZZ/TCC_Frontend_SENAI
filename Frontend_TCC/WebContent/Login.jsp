@@ -12,6 +12,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/Css.css">
 <link rel="stylesheet" href="css/Css2.css">
@@ -55,7 +56,7 @@
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Alterna navegação">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
-  <a class="navbar-brand" href="Home.jsp"><img src="imgs/Logo.png" 
+  <a class="navbar-brand" href="teste4.jsp"><img src="imgs/Logo.png" 
   		class="img-fluid" height="75" width="75" id="logo"></a>
 	
 	  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">

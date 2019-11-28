@@ -17,12 +17,12 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-none" id="navBar">
-	  <a class="navbar-brand" href="Home.jsp"><img src="imgs/Logo.png" 
-  		class="img-fluid" height="75" width="75" id="logo"></a>
+		<nav class="navbar navbar-expand-lg navbar-light bg-none" id="navBar">
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Alterna navegação">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
+  <a class="navbar-brand" href="teste4.jsp"><img src="imgs/Logo.png" 
+  		class="img-fluid" height="75" width="75" id="logo"></a>
 	
 	  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 	    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -31,12 +31,12 @@
 	    <form class="form-inline my-2 my-lg-0">
 
 			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-	    		<!-- Button trigger modal -->
+	    			    		<!-- Button trigger modal -->
 <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModalScrollable">
   COMO FUNCIONA
 </button>
 
-<!-- Modal --> 
+<!-- Modal -->
 <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
@@ -69,45 +69,133 @@ There are many variations of passages of Lorem Ipsum available, but the majority
     </div>
   </div>
 </div>
-
       			<a class="nav-item">
-       				<a class="nav-link" href="Login.jsp">ENTRAR</a>
+       				<a class="nav-link" href="Login.jsp" id="navItem">ENTRAR</a>
       			</a>
+      		
+      			
       			<a class="nav-item" href="https://play.google.com/store/apps/details?id=com.dts.freefireth&hl=pt_BR">
-      				<div>
-		<button type="submit" class="btStore" id="btPlay"></button>
-	</div>     		
-      				
-      					      			
+      				<button class="btn my-2 my-sm-0" type="button" id="btBaixar">BAIXAR</button>      			      			
 	    		</a>
 	    	</ul>
 	    </form>
-	  </div>  
+	    
+	    
+	  </div>
 	</nav>	<center>
-	<div id="meuCarousel" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#meuCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#meuCarousel" data-slide-to="1"></li>
-    <li data-target="#meuCarousel" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner teste">
-    <div class="carousel-item active">
-      <img src="imgs/smileO.png" class="d-block w-100" width="345" height="945" alt="...">
+	
+	<div class="card" style="width: 80rem; margin: auto; margin-top: 2%; padding:5%">
+	<div class="container">
+  	
+  	
+
+    <div class="row" style="background-color: #68ceee; height: 60px;"></div>
+    <div class="row" style="margin-left:10%">
+
+        <div class="col-md-5  promo-border" style="margin-top:60px;">
+            <div class="promo-text"><img src="imgs/Logo.png" 
+  		class="img-fluid" height="" width="60" id="logo"></div>
+            <p style="font-family: calibri;
+  
+  margin-top: 30px;">
+                Como nosso Sistema funciona ?
+            </p>
+
+                <p style=" font-family: calibri;
+  font-size: 14px;
+   
+  
+ padding: 10px;">Nosso aplicativo funciona como base para que estudantes de Psicologia, possam praticar, fazendo consultas grátis para pessoas necessitadas, com isso também os Estudantes podem abater seu tempo de Estágio</p>
+        </div>
+        <div class="col-md-1 "></div>
+        <div class="col-md-5 promo-border" style="margin-top:60px;">
+            <div class="promo-text"><img src="imgs/interogacao.png"></div>
+            <p style="font-family: calibri;
+  font-size: 20px;
+  margin-top: 25px;">
+                E quem Pode Utilizar?
+            </p>
+
+            <p style=" font-family: calibri;
+  font-size: 14px;
+  
+  padding: 10px;">Estudantes a partir do 4° termo da faculdade de psicologia, com seus documentos e matricula confirmada.
+  Como paciente : Qualquer pessoa que necessitar de ajuda, podendo até mesmo ser anônima. Caso contrário é necessario apenas realizar o Cadastro em nosso APP e aprovitar do nosso sistema seja na Web como no APP disponivel na PlayStore:
+  <a class="nav-item" href="https://play.google.com/store?hl=pt_BR">
+      				<button class="btn my-2 my-sm-0" type="button" id="btBaixar">Baixar Já</button>      			      			
+	    		</a>
+  
+        </div>
+</div>
     </div>
-    <div class="carousel-item">
-      <img src="imgs/smileO2.png" class="d-block w-100" width="345" height="945" alt="...">
+
+
+</div>
+
+<div class="row" style="background-color: #68ceee; margin-top:80px; height: 60px;"></div>
+<div class="footer">
+    <div style="text-align: center; margin: 2px 50;">
+        <img src="imgs/Logo.png" style="width: 3%">
     </div>
-    <div class="carousel-item">
- 	<img src="imgs/WOMANSMILE.png" class="d-block w-100" width="345" height="945" alt="...">    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+    <p>
+    <div class="footerLinks">
+        <span class="footer-title"><a href="#/howitworks">Como Funciona</a></span>
+        <span class="footer-title"><a href="#/serviceoptions">Serviços</a></span>
+        <span class="footer-title"><a href="#/serviceoptions">Certificado</a></span>
+        
+        
+    </div>
+<p>
+    <div class="footerLinks">
+        <span class="footer-title"><a href="#/aboutluxe">Sobre Nós</a></span>
+        <span class="footer-title"><a href="#/faq">FAQ</a></span>
+        <span class="footer-title"><a href="#/contactluxe">Nos Contate</a></span>
+        <span class="footer-title"><a href="#/privacypolicy">Politica de Privacidade</a></span>
+        <span class="footer-title"><a href="#/termsofuse">Termos de Uso</a></span>
+    </div>
+    <div style="padding-top:20px">
+        <ul class="list-inline" style="text-align: center;">
+            <li class="social-icons"><a href="https://pt-br.facebook.com/">
+        <span class="fa-stack fa-s icon-facebook">
+          <i class="fa fa-square fa-stack-2x"></i>
+          <i class="fa fa-facebook fa-stack-1x"></i>
+        </span>
+            </a></li>
+            <li class="social-icons"><a href="https://accounts.google.com/signin/v2/identifier?passive=1209600&continue=https%3A%2F%2Faboutme.google.com%2Fu%2F0%2F%3Freferer%3Dgplus&followup=https%3A%2F%2Faboutme.google.com%2Fu%2F0%2F%3Freferer%3Dgplus&flowName=GlifWebSignIn&flowEntry=ServiceLogin">
+        <span class="fa-stack fa-s icon-gplus">
+          <i class="fa fa-square fa-stack-2x"></i>
+          <i class="fa fa-google-plus fa-stack-1x"></i>
+        </span>
+            </a></li>
+            <li class="social-icons"><a href="https://twitter.com/login?lang=pt">
+        <span class="fa-stack fa-s icon-twitter">
+          <i class="fa fa-square fa-stack-2x"></i>
+          <i class="fa fa-twitter fa-stack-1x"></i>
+        </span>
+            </a></li>
+
+            <li class="social-icons"><a href="https://br.linkedin.com/">
+        <span class="fa-stack fa-s icon-linkedin">
+          <i class="fa fa-square fa-stack-2x"></i>
+          <i class="fa fa-linkedin fa-stack-1x"></i>
+        </span>
+            </a></li>
+            <li class="social-icons"><a href="https://www.instagram.com/?hl=pt-br">
+        <span class="fa-stack fa-s icon-instagram">
+          <i class="fa fa-square fa-stack-2x"></i>
+          <i class="fa fa-instagram fa-stack-1x"></i>
+        </span>
+            </a></li>
+            <li class="social-icons"><a href="https://www.flickr.com/">
+        <span class="fa-stack fa-s icon-flickr">
+          <i class="fa fa-square fa-stack-2x"></i>
+          <i class="fa fa-flickr fa-stack-1x"></i>
+        </span>
+            </a></li>
+        </ul>
+    </div>
+
+    
 </div>
 	</center>
 	<script src="js/jquery-3.3.1.min.js"></script>

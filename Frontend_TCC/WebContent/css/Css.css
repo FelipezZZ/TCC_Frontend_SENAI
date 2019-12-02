@@ -36,8 +36,24 @@ body {
 	position: center;
 }
 
+#btentrar{
+	color: FFF;
+	background-color: #6bbfb6;
+	border: none;
+	height: 50px;
+	line-height: 50px;
+	padding: 0 130px;
+	text-transform: uppercase;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 18px;
+}
+#btfb{
+	background-color: #385B9B;
+}
+
 #navBar{
-	background-color: #d9d9d9;
+	background-color: #95ded6;
 }
 
 #footer {
@@ -49,7 +65,14 @@ body {
 }
 
 #btBaixar{
-	background-color: #AAEBFF;
+	color: white;
+	background-image: url("imgs/playstore.png");;
+	border: none;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 50px;
+	cursor: pointer;
+	border-radius: 8px;
 }
 
 #navItem{

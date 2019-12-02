@@ -56,7 +56,7 @@
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Alterna navegação">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
-  <a class="navbar-brand" href="teste4.jsp"><img src="imgs/Logo.png" 
+  <a class="navbar-brand" href="Home.jsp"><img src="imgs/Logo.png" 
   		class="img-fluid" height="75" width="75" id="logo"></a>
 	
 	  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
@@ -67,7 +67,7 @@
 
 			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 	    			    		<!-- Button trigger modal -->
-<button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModalScrollable">
+<button type="button" class="btn btn-link" data-toggle="modal" style="color: white" data-target="#exampleModalScrollable">
   COMO FUNCIONA
 </button>
 
@@ -124,10 +124,10 @@ There are many variations of passages of Lorem Ipsum available, but the majority
 
     <div class="main">
 
-      <h3>Entre, ou <a href="#" data-toggle="modal" data-target="#exampleModalLong">Cadastre-se </a> </h3>
+      <h3>Entre, ou <a href="#" data-toggle="modal" style="color: #6bbfb6" data-target="#exampleModalLong">Cadastre-se </a> </h3>
       <div class="row">
         <div class="col-xs-6 col-sm-6 col-md-6">
-          <a href="#" class="btn btn-lg btn-primary btn-block">Facebook</a>
+          <a href="#" id="btfb" class="btn btn-lg btn-primary btn-block">Facebook</a>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6">
           <a href="#" class="btn btn-lg btn-info btn-block">Google</a>
@@ -147,14 +147,26 @@ There are many variations of passages of Lorem Ipsum available, but the majority
           <label for="inputPassword">Senha :</label>
           <input type="password" class="form-control" placeholder="Digite sua senha.."  id="inputPassword">
         </div>
-        <div class="checkbox pull-right">
+        
+      	  <center> 
+        <div class="text">
+       <a class="nav-link" href="Login.jsp" >Esqueci minha Senha.</a></div>
+        </center>
+        
+        <p>
+        <p>
+        
+        <button type="submit" id="btentrar" class="btn btn btn-primary">
+          Entrar
+        </button>
+        
+     
+         <!--   <div class="checkbox pull-right">
           <label>
             <input type="checkbox">
             Lembrar-me </label>
         </div>
-        <button type="submit" class="btn btn btn-primary">
-          Entrar
-        </button>
+        -->
       </form>
     
     </div>
@@ -251,6 +263,70 @@ There are many variations of passages of Lorem Ipsum available, but the majority
 			</div>	
 	
 	
+<div class="footer">
+    <div style="text-align: center; margin: 2px 50;">
+        <img src="imgs/Logo.png" style="width: 3%">
+    </div>
+    <p>
+    <div class="footerLinks">
+        <span class="footer-title"><a style="color: #6bbfb6" href="#/howitworks">Como Funciona</a></span>
+        <span class="footer-title"><a style="color: #6bbfb6" href="#/serviceoptions">Serviços</a></span>
+        <span class="footer-title"><a style="color: #6bbfb6" href="#/serviceoptions">Certificado</a></span>
+        
+        
+    </div>
+<p>
+    <div class="footerLinks">
+        <span class="footer-title"><a style="color: #6bbfb6" href="#/aboutluxe">Sobre Nós</a></span>
+        <span class="footer-title"><a style="color: #6bbfb6" href="#/faq">FAQ</a></span>
+        <span class="footer-title"><a style="color: #6bbfb6" href="#/contactluxe">Nos Contate</a></span>
+        <span class="footer-title"><a style="color: #6bbfb6" href="#/privacypolicy">Politica de Privacidade</a></span>
+        <span class="footer-title"><a style="color: #6bbfb6" href="#/termsofuse">Termos de Uso</a></span>
+    </div>
+    <div style="padding-top:20px">
+        <ul class="list-inline" style="text-align: center;">
+            <li class="social-icons"><a href="https://pt-br.facebook.com/">
+        <span class="fa-stack fa-s icon-facebook">
+          <i class="fa fa-square fa-stack-2x"></i>
+          <i class="fa fa-facebook fa-stack-1x"></i>
+        </span>
+            </a></li>
+            <li class="social-icons"><a href="https://accounts.google.com/signin/v2/identifier?passive=1209600&continue=https%3A%2F%2Faboutme.google.com%2Fu%2F0%2F%3Freferer%3Dgplus&followup=https%3A%2F%2Faboutme.google.com%2Fu%2F0%2F%3Freferer%3Dgplus&flowName=GlifWebSignIn&flowEntry=ServiceLogin">
+        <span class="fa-stack fa-s icon-gplus">
+          <i class="fa fa-square fa-stack-2x"></i>
+          <i class="fa fa-google-plus fa-stack-1x"></i>
+        </span>
+            </a></li>
+            <li class="social-icons"><a href="https://twitter.com/login?lang=pt">
+        <span class="fa-stack fa-s icon-twitter">
+          <i class="fa fa-square fa-stack-2x"></i>
+          <i class="fa fa-twitter fa-stack-1x"></i>
+        </span>
+            </a></li>
+
+            <li class="social-icons"><a href="https://br.linkedin.com/">
+        <span class="fa-stack fa-s icon-linkedin">
+          <i class="fa fa-square fa-stack-2x"></i>
+          <i class="fa fa-linkedin fa-stack-1x"></i>
+        </span>
+            </a></li>
+            <li class="social-icons"><a href="https://www.instagram.com/?hl=pt-br">
+        <span class="fa-stack fa-s icon-instagram">
+          <i class="fa fa-square fa-stack-2x"></i>
+          <i class="fa fa-instagram fa-stack-1x"></i>
+        </span>
+            </a></li>
+            <li class="social-icons"><a href="https://www.flickr.com/">
+        <span class="fa-stack fa-s icon-flickr">
+          <i class="fa fa-square fa-stack-2x"></i>
+          <i class="fa fa-flickr fa-stack-1x"></i>
+        </span>
+            </a></li>
+        </ul>
+    </div>
+
+    
+</div>
 	<script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </body>

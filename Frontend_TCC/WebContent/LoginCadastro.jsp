@@ -1,3 +1,11 @@
+<%@page import="java.net.URL"%>
+<%@page import="org.json.JSONObject"%>
+<%@page import="org.json.JSONArray"%>
+<%@page import="java.io.DataOutputStream"%>
+<%@page import="java.io.InputStreamReader"%>
+<%@page import="java.io.BufferedReader"%>
+<%@page import="java.io.InputStream"%>
+<%@page import="java.net.HttpURLConnection"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -16,12 +24,38 @@
 		String email = request.getParameter("email");
 		String senha = request.getParameter("senha");
 		String csenha = request.getParameter("csenha");
-		String sexo = request.getParameter("");
+		String sexo = request.getParameter("sexo");
 		
-		String universidade = request.getParameter("");
+		String universidade = request.getParameter("universidade");
 		String RA = request.getParameter("RA");
 		
 		String acao = request.getParameter("acao");
+		
+		if(acao != null){
+			String parametros = "tipoPerf=" + tipoperfil + "&nome=" + nome + "&email" + email + "&senha" + senha + "&sexo" + sexo + "&universidade" + universidade + "RA" + RA
+					+ "&acao=" + acao;
+			
+			URL url = new URL("http://localhost:8080/ProjetoPsicologoBackEnd/ProcessaPessoa");
+			
+			HttpURLConnection con = (HttpURLConnection) url.openConnection();
+			
+			con.setRequestMethod("POST");
+			con.setDoOutput(true);
+			
+			DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+			wr.writeBytes(parametros);
+
+			BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+			String apnd = "", linha = "";
+
+			while ((linha = br.readLine()) != null)
+				apnd += linha;
+
+			JSONObject obj = new JSONObject();
+			obj.put("status", apnd);
+
+		}
 		
 		System.out.println(acao);
 		
@@ -157,7 +191,7 @@
 	       					<div class="input-group-prepend">
 	    						<label class="input-group-text" for="inputGroupSexo">Sexo :</label>
 	  						</div>
-	  						<select class="custom-select" id="inputGroupSexo">
+	  						<select class="custom-select" id="inputGroupSexo" name="sexo">
 	    						<option value="1">Masculino</option>
 	    						<option value="2">Feminino</option>
 	  						</select>    
@@ -169,7 +203,7 @@
 	       					<div class="input-group-prepend">
 	    						<label class="input-group-text" for="inputGroupUniversidade">Universidade :</label>
 	  						</div>
-	  						<select class="custom-select" id="inputGroupSexo">
+	  						<select class="custom-select" id="inputGroupSexo" name="universidade">
 	    						<option value="1">Universidade 1</option>
 	    						<option value="2">Universidade 2</option>
 	  						</select>    
@@ -266,7 +300,6 @@
 		btPaci.addEventListener('click', ()=>{
 			document.getElementById('divEstagiario').style.display="none";
 		});
-		
     </script>
 </body>
 </html>

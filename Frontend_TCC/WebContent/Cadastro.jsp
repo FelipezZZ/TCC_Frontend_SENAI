@@ -50,8 +50,7 @@
 				apnd += linha;
 
 			JSONObject obj = new JSONObject();
-			obj.put("status", apnd);			
-			
+			obj.put("status", apnd);				
 		}
 	%>
 

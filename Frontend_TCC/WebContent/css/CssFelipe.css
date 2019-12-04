@@ -1,3 +1,7 @@
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web&subset=latin,latin-ext);
+
 #navBar{
 	background-color: #95ded6;
 }
@@ -44,4 +48,53 @@
 	font-weight: bold;
 	cursor: pointer;
 	border-radius: 18px;
+}
+
+.footerLinks{
+   text-align: center; 
+   padding: 5% 0 2% 0" 
+}
+
+.footer{
+    padding-top: 20px;
+ padding-bottom: 20px;
+  background-color: white;
+  bottom: 0;
+  position: relative;
+  width: 100%;   
+}
+
+.fa-stack{
+    color:#00aced;
+}
+.footerLinks >span > a{
+    color:light-blue;!important;
+}
+.icon-facebook {
+   color:#3b5998;
+}
+
+.icon-twitter {
+    color:#00aced;
+}
+
+.icon-gplus{
+    color:#dd4b39;
+}
+
+.fa-stack-1x {
+    color:white;
+}
+
+.fa-s{
+    color:#00aced;
+}
+.list-inline>li{
+   padding-left:1px;!important;
+   padding-right:1px;!important ;
+   display: inline;
+   float: center;
+}
+.db-bk-color-one {
+    background-color:  #f8f8f8;
 }

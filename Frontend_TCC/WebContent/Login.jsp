@@ -176,7 +176,7 @@ There are many variations of passages of Lorem Ipsum available, but the majority
 					
 					<!-- Modal -->
 					
-	<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" style="margin: auto; margin-top: 9%" >
+	<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" style="margin: auto; margin-top: 9%">
   	<div class="modal-dialog" role="document">
     	<div class="modal-content">
       	<div class="modal-header">
@@ -272,8 +272,6 @@ There are many variations of passages of Lorem Ipsum available, but the majority
         <span class="footer-title"><a style="color: #6bbfb6" href="#/howitworks">Como Funciona</a></span>
         <span class="footer-title"><a style="color: #6bbfb6" href="#/serviceoptions">Serviços</a></span>
         <span class="footer-title"><a style="color: #6bbfb6" href="#/serviceoptions">Certificado</a></span>
-        
-        
     </div>
 <p>
     <div class="footerLinks">

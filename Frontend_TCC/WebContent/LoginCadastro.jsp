@@ -31,9 +31,9 @@
 		
 		String acao = request.getParameter("acao");
 		
-		if(acao != null){
-			String parametros = "tipoPerf=" + tipoperfil + "&nome=" + nome + "&email" + email + "&senha" + senha + "&sexo" + sexo + "&universidade" + universidade + "RA" + RA
-					+ "&acao=" + acao;
+		if(acao.equals("loginWeb") || acao != null && tipoperfil != null && senha.equals(csenha)){
+			String parametros = "tipoPerf=" + tipoperfil + "&nome=" + nome + "&email=" + email + "&senha=" + senha + "&sexo=" + sexo + "&universidade=" + universidade + "&RA=" + RA
+					+ "&acao=" + acao + "&cadastroFB=" + "false";
 			
 			URL url = new URL("http://localhost:8080/ProjetoPsicologoBackEnd/ProcessaPessoa");
 			
@@ -54,10 +54,10 @@
 
 			JSONObject obj = new JSONObject();
 			obj.put("status", apnd);
-
 		}
 		
-		System.out.println(acao);
+		
+/*		System.out.println(acao);
 		
 		System.out.println(tipoperfil);
 		System.out.println(nome);
@@ -67,7 +67,7 @@
 		System.out.println(sexo);
 		
 		System.out.println(universidade);
-		System.out.println(RA);
+		System.out.println(RA);*/
 		
 	%>
 	
@@ -136,16 +136,16 @@
       				</div>
 			  		
 			  		<form method="post" action="#">
-			  			<input type="hidden" name="acao" value="login">
+			  			<input type="hidden" name="acao" value="loginWeb">
 			  		
 			  			<div class="form-group">
 			  				<label for="inputUsernameEmail">Email :</label>
-         	 				<input type="text" class="form-control "placeholder="Digite seu email.." id="inputUsernameEmail">
+         	 				<input type="text" name="email" class="form-control "placeholder="Digite seu email.." id="inputUsernameEmail">
 			  			</div>
 			  			
 			  			<div class="form-group">
           					<label for="inputPassword">Senha :</label>
-          					<input type="password" class="form-control" placeholder="Digite sua senha.."  id="inputPassword">
+          					<input type="password" name="senha" class="form-control" placeholder="Digite sua senha.."  id="inputPassword">
         				</div>
         				
         				<button type="submit" id="btentrar" class="btn btn btn-primary">Entrar</button>
@@ -204,6 +204,7 @@
 	    						<label class="input-group-text" for="inputGroupUniversidade">Universidade :</label>
 	  						</div>
 	  						<select class="custom-select" id="inputGroupSexo" name="universidade">
+	  							<option value=null>Universidades</option>
 	    						<option value="1">Universidade 1</option>
 	    						<option value="2">Universidade 2</option>
 	  						</select>    

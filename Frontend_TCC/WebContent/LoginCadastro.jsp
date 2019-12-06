@@ -31,29 +31,86 @@
 		
 		String acao = request.getParameter("acao");
 		
-		if(acao.equals("loginWeb") || acao != null && tipoperfil != null && senha.equals(csenha)){
-			String parametros = "tipoPerf=" + tipoperfil + "&nome=" + nome + "&email=" + email + "&senha=" + senha + "&sexo=" + sexo + "&universidade=" + universidade + "&RA=" + RA
-					+ "&acao=" + acao + "&cadastroFB=" + "false";
+		if(acao != null){
 			
-			URL url = new URL("http://localhost:8080/ProjetoPsicologoBackEnd/ProcessaPessoa");
+			String parametros;
 			
-			HttpURLConnection con = (HttpURLConnection) url.openConnection();
-			
-			con.setRequestMethod("POST");
-			con.setDoOutput(true);
-			
-			DataOutputStream wr = new DataOutputStream(con.getOutputStream());
-			wr.writeBytes(parametros);
+			if(acao.equals("loginWeb")){
+				parametros = "email=" + email + "&senha=" + senha + "&acao=" + acao;
+				
+				URL url = new URL("http://localhost:8080/ProjetoPsicologoBackEnd/ProcessaPessoa");
+				
+				HttpURLConnection con = (HttpURLConnection) url.openConnection();
+				
+				con.setRequestMethod("POST");
+				con.setDoOutput(true);
+				
+				DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+				wr.writeBytes(parametros);
 
-			BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+				BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
-			String apnd = "", linha = "";
+				String apnd = "", linha = "";
 
-			while ((linha = br.readLine()) != null)
-				apnd += linha;
+				while ((linha = br.readLine()) != null)
+					apnd += linha;
 
-			JSONObject obj = new JSONObject();
-			obj.put("status", apnd);
+				JSONObject obj = new JSONObject();
+				obj.put("email", apnd);
+				
+				if(obj.getString("email").equals("null")){
+					System.out.println("num logo");
+				}else if (obj.getString("email") != null){
+					System.out.println("logo2");
+					//request.getSession().setAttribute("usuario",obj.get("login".toString()) );
+					//request.getSession().setAttribute("cod_user",obj.get("cod_user".toString()) );
+					//response.sendRedirect("Home.jsp");
+				}
+			}else if(tipoperfil.equals("1") && senha != "" && senha.equals(csenha) && !universidade.equals("0")){
+				parametros = "tipoPerf=" + tipoperfil + "&nome=" + nome + "&email=" + email + "&senha=" + senha + "&sexo=" + sexo + "&universidade=" + universidade + "&RA=" + RA
+						+ "&acao=" + acao + "&cadastroFB=" + "false";	
+				
+				URL url = new URL("http://localhost:8080/ProjetoPsicologoBackEnd/ProcessaPessoa");
+				
+				HttpURLConnection con = (HttpURLConnection) url.openConnection();
+				
+				con.setRequestMethod("POST");
+				con.setDoOutput(true);
+				
+				DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+				wr.writeBytes(parametros);
+
+				BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+				String apnd = "", linha = "";
+
+				while ((linha = br.readLine()) != null)
+					apnd += linha;
+
+				JSONObject obj = new JSONObject();
+				obj.put("status", apnd);
+			}else if(tipoperfil.equals("2") && senha != "" && senha.equals(csenha)){
+				parametros = "tipoPerf=" + tipoperfil + "&nome=" + nome + "&email=" + email + "&senha=" + senha + "&sexo=" + sexo + "&universidade=" + universidade + "&RA=" + RA
+						+ "&acao=" + acao + "&cadastroFB=" + "false";	
+				
+				URL url = new URL("http://localhost:8080/ProjetoPsicologoBackEnd/ProcessaPessoa");
+				
+				HttpURLConnection con = (HttpURLConnection) url.openConnection();
+				
+				con.setRequestMethod("POST");
+				con.setDoOutput(true);
+				
+				DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+				wr.writeBytes(parametros);
+
+				BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+				String apnd = "", linha = "";
+
+				
+				while ((linha = br.readLine()) != null) 
+					apnd += linha;
+			}
 		}
 		
 		
@@ -204,7 +261,7 @@
 	    						<label class="input-group-text" for="inputGroupUniversidade">Universidade :</label>
 	  						</div>
 	  						<select class="custom-select" id="inputGroupSexo" name="universidade">
-	  							<option value=null>Universidades</option>
+	  							<option value="0">Universidades</option>
 	    						<option value="1">Universidade 1</option>
 	    						<option value="2">Universidade 2</option>
 	  						</select>    

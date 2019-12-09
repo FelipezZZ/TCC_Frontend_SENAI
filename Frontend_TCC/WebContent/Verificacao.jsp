@@ -22,7 +22,6 @@
 		String cod_pessoaV = request.getParameter("cod_pessoaV");
 		
 		if(acao != null){
-
 			String parametros = "acao="+acao+"&cod_pessoaV="+cod_pessoaV;
 			
 			URL url = new URL("http://localhost:8080/ProjetoPsicologoBackEnd/ProcessaPessoa");
@@ -48,10 +47,11 @@
 				<table class="table table-bordered table-hover">
 					<thead class="thead-dark">
 						<tr>
-			      			<th width="25%" scope="col">Cod</th>
-			      			<th width="25%" scope="col">Login</th>
-			      			<th width="25%" scope="col">Nickname</th>
-			      			<th width="25%" scope="col">Verificar</th>
+			      			<th width="20%" scope="col">Cod</th>
+			      			<th width="20%" scope="col">Nome</th>
+			      			<th width="20%" scope="col">Universidade</th>
+			      			<th width="20%" scope="col">RA</th>
+			      			<th width="20%" scope="col">Verificar</th>
 			    		</tr>
 					</thead>
 					<tbody id="tbody">
@@ -59,32 +59,33 @@
 						String listarPessoas = "kkk";
 						
 						if (listarPessoas != null) {
-						String parametros =	"acao="+"listarNaoVerificados";
+							String parametros =	"acao="+"listarNaoVerificados";
+								
+							URL url = new URL("http://localhost:8080/ProjetoPsicologoBackEnd/ProcessaPessoa");
 							
-						URL url = new URL("http://localhost:8080/ProjetoPsicologoBackEnd/ProcessaPessoa");
-						
-						HttpURLConnection con = (HttpURLConnection) url.openConnection();
-						
-						con.setRequestMethod("POST");
-						con.setDoOutput(true);
-						
-						DataOutputStream wr = new DataOutputStream(con.getOutputStream());
-						wr.writeBytes(parametros);
-						
-						BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
-						
-						String linha = "";
-						JSONObject obj;
-						while ((linha = br.readLine()) != null & linha != "") {
-						obj = new JSONObject(linha);
+							HttpURLConnection con = (HttpURLConnection) url.openConnection();
+							
+							con.setRequestMethod("POST");
+							con.setDoOutput(true);
+							
+							DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+							wr.writeBytes(parametros);
+							
+							BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+							
+							String linha = "";
+							JSONObject obj;
+							while ((linha = br.readLine()) != null & linha != "") {
+							obj = new JSONObject(linha);
 					%>
 						<tr>
 							<th scope="row"><%=obj.getInt("cod_pessoa") %></th>
-      						<td><%=obj.getString("login") %></td>
-      						<td><%=obj.getString("nickname") %></td>
+							<td><%=obj.getString("nome") %></td>
+      						<td><%=obj.getString("universidade") %></td>
+      						<td><%=obj.getString("RA") %></td>
       						<td>
       							<form method="post" action="#">
-      								<input type="hidden" name="acao" value="verificar">
+      								<input type="hidden" name="acao" value="verificaPessoa">
       								<input type="hidden" name="cod_pessoaV" value="<%=obj.getInt("cod_pessoa") %>">
       								<center><button type="submit" class="btn btn-success">verificar</button></center>
       							</form>
@@ -105,7 +106,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script>
 
-	document.getElementById("txtBusca").addEventListener("keyup",function(){
+		document.getElementById("txtBusca").addEventListener("keyup",function(){
 		
 		var busca = document.getElementById("txtBusca").value.toLowerCase();
 		for(var i = 0; i < tbody.childNodes.length; i++){//Acessa as linhas

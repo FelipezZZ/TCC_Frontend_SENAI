@@ -19,6 +19,14 @@
 <body>
 	
 	<%
+	
+		String sair = request.getParameter("sair");
+		if (sair != null) {
+			request.getSession().invalidate();
+			request.getSession().setAttribute("email", null);
+			response.sendRedirect("LoginCadastro.jsp");
+		}
+	
 		String tipoperfil = request.getParameter("rbTipoperfil");
 		String nome = request.getParameter("nome");
 		String email = request.getParameter("email");
@@ -61,10 +69,15 @@
 				if(obj.getString("email").equals("null")){
 					System.out.println("num logo");
 				}else if (obj.getString("email") != null){
-					System.out.println("logo2");
-					//request.getSession().setAttribute("usuario",obj.get("login".toString()) );
-					//request.getSession().setAttribute("cod_user",obj.get("cod_user".toString()) );
-					//response.sendRedirect("Home.jsp");
+					if(obj.getString("email").equals("adm")){
+						System.out.println(obj.getString("email"));
+						request.getSession().setAttribute("email",obj.get("email".toString()) );
+						response.sendRedirect("Verificacao.jsp");
+					}else{
+						System.out.println(obj.getString("email"));
+						request.getSession().setAttribute("email",obj.get("email".toString()) );
+						response.sendRedirect("Home.jsp");
+					}
 				}
 			}else if(tipoperfil.equals("1") && senha != "" && senha.equals(csenha) && !universidade.equals("0")){
 				parametros = "tipoPerf=" + tipoperfil + "&nome=" + nome + "&email=" + email + "&senha=" + senha + "&sexo=" + sexo + "&universidade=" + universidade + "&RA=" + RA
@@ -139,21 +152,49 @@
 	  	
 	  	<div class="collapse navbar-collapse" id="navbarToggler">
 	    
+	    	<%
+				if (request.getSession().getAttribute("email") != null) {
+			%>
+			
+				<form method="post" action="#">
+					<input type="hidden" name="sair" value="sair">
+					<div class="dropdown">
+						<button class="btn btn-danger dropdown-toggle" type="button"
+							id="btUser" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false">
+							<img src="imgs/user-icon.png" class="img-fluid" height="27"
+								width="27">
+						</button>
+						<div class="dropdown-menu" aria-labelledby="btUser"> 
+							<a class="dropdown-item" href="EditarPerfil.jsp">Editar Perfil</a>
+							<input type="submit" class="dropdown-item" value="sair" />
+						</div>
+					</div>
+				</form>			
+			
+			<%
+				}
+			%>
+	    
 	    	<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 	    	</ul>
 	    
-		    <form class="form-inline my-2 my-lg-0">
-		    	<ul class="navbar-nav mr-auto mt-lg-0">
-		    	
-		    		<a class="nav-item">
-		    			<button type="button" class="btn btn-link" data-toggle="modal" data-target="#ModalInfo" id="navItem">COMO FUNCIONA</button>
-		    		</a>
-					
-					<a class="nav-item">
-	       				<a class="nav-link" href="Login.jsp" id="navItem">ENTRAR</a>
-	      			</a>
-	      		
-	      			
+	    	<form class="form-inline my-2 my-lg-0">
+			    <ul class="navbar-nav mr-auto mt-lg-0">
+			    	<a class="nav-item">
+			    		<button type="button" class="btn btn-link" data-toggle="modal" data-target="#ModalInfo" id="navItem">COMO FUNCIONA</button>
+			    	</a>	    	
+	    
+	    	<%
+    			if (request.getSession().getAttribute("email") == null) {			
+    		%>			
+						<a class="nav-item">
+		       				<a class="nav-link" href="LoginCadastro.jsp" id="navItem">ENTRAR</a>
+		      			</a>
+    		<%
+    			}
+    		%>
+	  
 	      			<a class="nav-item">
 	      				<a class="nav-link" href="https://play.google.com/store/apps/details?id=com.dts.freefireth&hl=pt_BR" id="navItem">BAIXAR</a>		      			
 		    		</a>

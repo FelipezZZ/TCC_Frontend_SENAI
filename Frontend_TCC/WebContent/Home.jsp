@@ -70,7 +70,7 @@ There are many variations of passages of Lorem Ipsum available, but the majority
   </div>
 </div>
       			<a class="nav-item">
-       				<a class="nav-link" href="Login.jsp" id="navItem">ENTRAR</a>
+       				<a class="nav-link" href="LoginCadastro.jsp" id="navItem">ENTRAR</a>
       			</a>
       		
       			

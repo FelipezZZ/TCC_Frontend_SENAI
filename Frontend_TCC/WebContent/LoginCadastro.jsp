@@ -19,14 +19,14 @@
 <body>
 	
 	<%
-	
+		
 		String sair = request.getParameter("sair");
 		if (sair != null) {
 			request.getSession().invalidate();
 			request.getSession().setAttribute("email", null);
 			response.sendRedirect("LoginCadastro.jsp");
 		}
-	
+		
 		String tipoperfil = request.getParameter("rbTipoperfil");
 		String nome = request.getParameter("nome");
 		String email = request.getParameter("email");
@@ -40,8 +40,74 @@
 		String acao = request.getParameter("acao");
 		
 		if(acao != null){
+			System.out.println(acao);
 			
 			String parametros;
+			
+			if(acao.equals("cadastrarPessoaWeb")){
+				
+				if(tipoperfil.equals("1") && senha != "" && senha.equals(csenha) && !universidade.equals("0")){
+					parametros = "tipoPerf=" + tipoperfil + "&nome=" + nome + "&email=" + email + "&senha=" + senha + "&sexo=" + sexo + "&universidade=" + universidade + "&RA=" + RA
+							+ "&acao=" + acao + "&cadastroFB=" + "false";	
+					
+					URL url = new URL("http://localhost:8080/ProjetoPsicologoBackEnd/ProcessaPessoa");
+					
+					HttpURLConnection con = (HttpURLConnection) url.openConnection();
+					
+					con.setRequestMethod("POST");
+					con.setDoOutput(true);
+					
+					DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+					wr.writeBytes(parametros);
+
+					BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+					String apnd = "", linha = "";
+
+					while ((linha = br.readLine()) != null)
+						apnd += linha;
+
+					JSONObject obj = new JSONObject(apnd);
+					System.out.println("obj " + obj);
+						
+					request.getSession().setAttribute("cod_pessoa",obj.get("cod_pessoa".toString()) );
+					request.getSession().setAttribute("email",obj.get("email".toString()) );
+					request.getSession().setAttribute("tipoPerf",obj.get("tipoPerf".toString()) );
+					response.sendRedirect("Home.jsp");
+				}
+				
+				if(tipoperfil.equals("2") && senha != "" && senha.equals(csenha)){
+					parametros = "tipoPerf=" + tipoperfil + "&nome=" + nome + "&email=" + email + "&senha=" + senha + "&sexo=" + sexo + "&universidade=" + universidade + "&RA=" + RA
+							+ "&acao=" + acao + "&cadastroFB=" + "false";	
+					
+					URL url = new URL("http://localhost:8080/ProjetoPsicologoBackEnd/ProcessaPessoa");
+					
+					HttpURLConnection con = (HttpURLConnection) url.openConnection();
+					
+					con.setRequestMethod("POST");
+					con.setDoOutput(true);
+					
+					DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+					wr.writeBytes(parametros);
+
+					BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+					String apnd = "", linha = "";
+					
+					while ((linha = br.readLine()) != null) 
+						apnd += linha;
+					
+					JSONObject obj = new JSONObject(apnd);
+					System.out.println("obj " + obj);
+					
+					request.getSession().setAttribute("cod_pessoa",obj.get("cod_pessoa".toString()) );
+					request.getSession().setAttribute("email",obj.get("email".toString()) );
+					request.getSession().setAttribute("tipoPerf",obj.get("tipoPerf".toString()) );
+					response.sendRedirect("Home.jsp");
+				}
+				
+			}
+			
 			
 			if(acao.equals("loginWeb")){
 				parametros = "email=" + email + "&senha=" + senha + "&acao=" + acao;
@@ -63,82 +129,16 @@
 				while ((linha = br.readLine()) != null)
 					apnd += linha;
 
-				JSONObject obj = new JSONObject();
-				obj.put("email", apnd);
-				
-				if(obj.getString("email").equals("null")){
-					System.out.println("num logo");
-				}else if (obj.getString("email") != null){
-					if(obj.getString("email").equals("adm")){
-						System.out.println(obj.getString("email"));
-						request.getSession().setAttribute("email",obj.get("email".toString()) );
-						response.sendRedirect("Verificacao.jsp");
-					}else{
-						System.out.println(obj.getString("email"));
-						request.getSession().setAttribute("email",obj.get("email".toString()) );
-						response.sendRedirect("Home.jsp");
-					}
-				}
-			}else if(tipoperfil.equals("1") && senha != "" && senha.equals(csenha) && !universidade.equals("0")){
-				parametros = "tipoPerf=" + tipoperfil + "&nome=" + nome + "&email=" + email + "&senha=" + senha + "&sexo=" + sexo + "&universidade=" + universidade + "&RA=" + RA
-						+ "&acao=" + acao + "&cadastroFB=" + "false";	
-				
-				URL url = new URL("http://localhost:8080/ProjetoPsicologoBackEnd/ProcessaPessoa");
-				
-				HttpURLConnection con = (HttpURLConnection) url.openConnection();
-				
-				con.setRequestMethod("POST");
-				con.setDoOutput(true);
-				
-				DataOutputStream wr = new DataOutputStream(con.getOutputStream());
-				wr.writeBytes(parametros);
-
-				BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
-
-				String apnd = "", linha = "";
-
-				while ((linha = br.readLine()) != null)
-					apnd += linha;
-
-				JSONObject obj = new JSONObject();
-				obj.put("status", apnd);
-			}else if(tipoperfil.equals("2") && senha != "" && senha.equals(csenha)){
-				parametros = "tipoPerf=" + tipoperfil + "&nome=" + nome + "&email=" + email + "&senha=" + senha + "&sexo=" + sexo + "&universidade=" + universidade + "&RA=" + RA
-						+ "&acao=" + acao + "&cadastroFB=" + "false";	
-				
-				URL url = new URL("http://localhost:8080/ProjetoPsicologoBackEnd/ProcessaPessoa");
-				
-				HttpURLConnection con = (HttpURLConnection) url.openConnection();
-				
-				con.setRequestMethod("POST");
-				con.setDoOutput(true);
-				
-				DataOutputStream wr = new DataOutputStream(con.getOutputStream());
-				wr.writeBytes(parametros);
-
-				BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
-
-				String apnd = "", linha = "";
-
-				
-				while ((linha = br.readLine()) != null) 
-					apnd += linha;
+				JSONObject obj = new JSONObject(apnd);
+				System.out.println(obj);
+				request.getSession().setAttribute("cod_pessoa",obj.get("cod_pessoa".toString()) );
+				request.getSession().setAttribute("email",obj.get("email".toString()) );
+				request.getSession().setAttribute("tipoPerf",obj.get("tipoPerf".toString()) );
+				response.sendRedirect("Home.jsp");
 			}
+			
 		}
-		
-		
-/*		System.out.println(acao);
-		
-		System.out.println(tipoperfil);
-		System.out.println(nome);
-		System.out.println(email);
-		System.out.println(senha);
-		System.out.println(csenha);
-		System.out.println(sexo);
-		
-		System.out.println(universidade);
-		System.out.println(RA);*/
-		
+	
 	%>
 	
 	<nav class="navbar navbar-expand-lg navbar-light bg-none" id="navBar">
@@ -263,7 +263,7 @@
 				<div class="modal-body">
 					<center>
 					<form method="post" action="#">
-						<input type="hidden" name="acao" value="cadastrarPessoa">
+						<input type="hidden" name="acao" value="cadastrarPessoaWeb">
 						
 					<div class="form-check form-check-inline">
 		  				<input class="form-check-input" type="radio" name="rbTipoperfil" id="rbEstagiario" value="1">

@@ -1,13 +1,3 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -28,7 +18,7 @@
 			request.getSession().setAttribute("email", null);
 			response.sendRedirect("LoginCadastro.jsp");
 		}
-	
+		
 	%>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-none" id="navBar">
@@ -109,25 +99,65 @@
 		</div>
 	</div>
 	
+	<p>
+	
+			<!-- NAVS EDITAR PERFIL -->
 	<div class="container bootstrap snippet">
 		<div class="row">
 			<div class="col-sm-9">
 			
 				<ul class="nav nav-tabs">
 					<li class="nav-item">
-						<a class="nav-link active" href="#">Ativo</a>
+						<a class="nav-link active" id="perfil-tab" data-toggle="tab" href="#perfil" role="tab" aria-controls="perfil" aria-selected="true">
+							Perfil
+						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Link</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Link</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link disabled" href="#">Desativado</a>
+						<a class="nav-link" id="hd-tab" data-toggle="tab" href="#hd" role="tab" aria-controls="hd" aria-selected="true">
+							Horários/Descrição
+						</a>
 					</li>
 				</ul>
-			
+				
+				<div class="tab-content" id="myTabContent">
+					<div class="tab-pane fade show active" id="perfil" role="tabpanel" aria-labelledby="perfil-tab">
+						<hr>
+						<form class="form" action="#" method="post">
+							<div class="form-group">
+                       			<div class="col-xs-6">
+                              		<label for="first_name"><h4>First name</h4></label>
+                              		<input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                          		</div>
+                      		</div>
+                      		
+                      		<div class="form-group">
+                            	<div class="col-xs-6">
+                            		<label for="last_name"><h4>Last name</h4></label>
+                              		<input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                         	 	</div>
+                      		</div>
+                      		
+                      		<div class="form-group">
+                            	<div class="col-xs-6">
+                            		<label for="last_name"><h4>Last name</h4></label>
+                              		<input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                         	 	</div>
+                      		</div>
+                      		
+                      		<div class="form-group">
+                            	<div class="col-xs-6">
+                            		<label for="last_name"><h4>Last name</h4></label>
+                              		<input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                         	 	</div>
+                      		</div>
+						</form>
+					</div>
+				 	
+				 	<div class="tab-pane fade" id="hd" role="tabpanel" aria-labelledby="hd-tab">
+				 		HD
+				 	</div>
+				</div>
+				
 			</div>
 		</div>
 	</div>

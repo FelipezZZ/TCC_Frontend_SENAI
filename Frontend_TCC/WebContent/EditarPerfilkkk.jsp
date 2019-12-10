@@ -70,8 +70,7 @@
                 <hr>
                   <form class="form" action="##" method="post" id="registrationForm">
                       <div class="form-group">
-                          
-                          <div class="col-xs-6">
+                       		<div class="col-xs-6">
                               <label for="first_name"><h4>First name</h4></label>
                               <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
                           </div>

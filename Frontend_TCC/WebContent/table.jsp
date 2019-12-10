@@ -95,7 +95,7 @@
     	 <table class="table table-list-search">
                     <thead>
                         <tr>
-                          <th width="20%" scope="col">Cod</th>
+                          <th width="20%" scope="col">Código Pessoa</th>
 			      			<th width="20%" scope="col">Nome</th>
 			      			<th width="20%" scope="col">Universidade</th>
 			      			<th width="20%" scope="col">RA</th>
@@ -105,10 +105,10 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Sample</td>
-                            <td>Filter</td>
-                            <td>12-11-2011 11:11</td>
-                            <td>OK</td>
+                            <td>0125478</td>
+                            <td>Caio</td>
+                            <td>UniFaj</td>
+                            <td>46177844898</td>
                            <td><button type="submit" class="btn btn-success">verificar</button></td>
                             
                         </tr>

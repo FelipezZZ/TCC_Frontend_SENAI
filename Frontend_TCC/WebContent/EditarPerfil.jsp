@@ -1,3 +1,9 @@
+<%@page import="java.io.InputStreamReader"%>
+<%@page import="org.json.JSONObject"%>
+<%@page import="java.io.BufferedReader"%>
+<%@page import="java.io.DataOutputStream"%>
+<%@page import="java.net.HttpURLConnection"%>
+<%@page import="java.net.URL"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -112,44 +118,110 @@
 							Perfil
 						</a>
 					</li>
+					
+                  	<%
+                  		if(request.getSession().getAttribute("tipoPerf").toString().equals("1")){
+                      				
+                      	System.out.println("tipoPerf " + request.getSession().getAttribute("tipoPerf"));
+                      				
+                  	%>					
+					
 					<li class="nav-item">
 						<a class="nav-link" id="hd-tab" data-toggle="tab" href="#hd" role="tab" aria-controls="hd" aria-selected="true">
 							Horários/Descrição
 						</a>
 					</li>
+					
+					<%
+                  		}
+					%>
+					
 				</ul>
+				
+				<%
+				
+					String parametros = "acao=" + "pegarPessoa" + "&cod_pessoa=" + request.getSession().getAttribute("cod_pessoa").toString();
+				
+					URL url = new URL("http://localhost:8080/ProjetoPsicologoBackEnd/ProcessaPessoa");
+					
+					HttpURLConnection con = (HttpURLConnection) url.openConnection();
+					
+					con.setRequestMethod("POST");
+					con.setDoOutput(true);
+					
+					DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+					wr.writeBytes(parametros);
+	
+					BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+	
+					String apnd = "", linha = "";
+					
+					while ((linha = br.readLine()) != null) 
+						apnd += linha;
+					
+					//JSONObject obj = new JSONObject(apnd);
+				
+				%>
 				
 				<div class="tab-content" id="myTabContent">
 					<div class="tab-pane fade show active" id="perfil" role="tabpanel" aria-labelledby="perfil-tab">
 						<hr>
 						<form class="form" action="#" method="post">
+						
 							<div class="form-group">
                        			<div class="col-xs-6">
-                              		<label for="first_name"><h4>First name</h4></label>
+                              		<label for="first_name"><h4>Nome</h4></label>
                               		<input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
                           		</div>
                       		</div>
                       		
                       		<div class="form-group">
                             	<div class="col-xs-6">
-                            		<label for="last_name"><h4>Last name</h4></label>
+                            		<label for="last_name"><h4>Email</h4></label>
                               		<input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
                          	 	</div>
                       		</div>
                       		
                       		<div class="form-group">
                             	<div class="col-xs-6">
-                            		<label for="last_name"><h4>Last name</h4></label>
+                            		<label for="last_name"><h4>Senha</h4></label>
                               		<input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                         	 	</div>
+                      		</div>
+                      		
+                      		<%
+                      			if(request.getSession().getAttribute("tipoPerf").toString().equals("1")){
+                      				
+                      				System.out.println("tipoPerf " + request.getSession().getAttribute("tipoPerf"));
+                      				
+                      		%>
+                      		
+                      		<div class="form-group">
+                            	<div class="col-xs-6">
+			       					<div class="input-group mb-3">
+				       					<div class="input-group-prepend">
+				    						<label class="input-group-text" for="inputGroupUniversidade">Universidade :</label>
+				  						</div>
+				  						<select class="custom-select" id="inputGroupSexo" name="universidade">
+				  							<option value="0">Universidades</option>
+				    						<option value="1">Universidade 1</option>
+				    						<option value="2">Universidade 2</option>
+				  						</select>    
+			  						</div> 
                          	 	</div>
                       		</div>
                       		
                       		<div class="form-group">
                             	<div class="col-xs-6">
-                            		<label for="last_name"><h4>Last name</h4></label>
+                            		<label for="last_name"><h4>RA</h4></label>
                               		<input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
                          	 	</div>
                       		</div>
+                      		
+                      		<%
+                      			}
+                      		%>
+                      		
 						</form>
 					</div>
 				 	

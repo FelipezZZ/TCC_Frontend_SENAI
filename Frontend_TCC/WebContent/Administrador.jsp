@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>ADMINISTRADOR</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/CssFelipe.css">
 </head>
@@ -91,7 +91,7 @@
 	%>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-none" id="navBar">
-		<h1>ADMINISTRADOR</h1>
+		<h1></h1>
 		
 		<%
 			if (request.getSession().getAttribute("logado") != null) {

@@ -181,7 +181,14 @@
 							<img src="imgs/user-icon.png" class="img-fluid" height="27"
 								width="27">
 						</button>
-						<div class="dropdown-menu" aria-labelledby="btUser"> 
+						<div class="dropdown-menu" aria-labelledby="btUser">
+							<%
+								if(request.getSession().getAttribute("tipoPerf").toString().equals("2")){
+							%>
+								<a class="dropdown-item" href="Anamneses.jsp">Anamneses</a> 
+							<%
+								}
+							%>
 							<a class="dropdown-item" href="EditarPerfil.jsp">Editar Perfil</a>
 							<input type="submit" class="dropdown-item" value="sair" />
 						</div>
@@ -344,6 +351,10 @@
 						</form>
 					</div>
 				 	
+				 	<%
+      					if(request.getSession().getAttribute("tipoPerf") != null){
+                  		if(request.getSession().getAttribute("tipoPerf").toString().equals("1")){ 				
+                  	%>			
 				 	<div class="tab-pane fade" id="dadosestagi" role="tabpanel" aria-labelledby="hd-tab">
 				 		<hr>
 						<form class="form" action="#" method="post">
@@ -390,6 +401,11 @@
                       	
                       	</form>
 				 	</div>
+				 	<%
+                  		}
+      					}
+				 	%>
+				 	
 				</div>
 				
 				<%

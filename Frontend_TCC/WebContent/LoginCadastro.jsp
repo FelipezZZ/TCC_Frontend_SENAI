@@ -312,7 +312,7 @@
        					<p>
 					</div>
 						 
-					<button type="submit" class="btn btn-outline-primary-dark" height="300" width="300">Cadastre-se</button>	 
+					<button type="submit" id="btentrar" class="btn btn btn-primary" height="300" width="300">Cadastre-se</button>	 
 						 					
 					</form>
 					</center>

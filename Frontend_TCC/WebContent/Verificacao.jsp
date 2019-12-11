@@ -47,8 +47,6 @@
 	%>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-none" id="navBar">
-		<h1>ADMINISTRADOR</h1>
-		
 		<%
 			if (request.getSession().getAttribute("logado") != null) {
 		%>
@@ -129,7 +127,7 @@
       							<form method="post" action="#">
       								<input type="hidden" name="acao" value="verificaPessoa">
       								<input type="hidden" name="cod_pessoaV" value="<%=obj.getInt("cod_pessoa") %>">
-      								<center><button type="submit" class="btn btn-success">verificar</button></center>
+      								<center><button type="submit" id="btentrar" class="btn btn btn-primary">verificar</button></center>
       							</form>
       						</td>
 						</tr>

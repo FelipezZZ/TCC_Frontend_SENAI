@@ -25,6 +25,136 @@
 			response.sendRedirect("LoginCadastro.jsp");
 		}
 		
+		String acao = request.getParameter("acao");
+		String nome = request.getParameter("nome");
+		String email = request.getParameter("email");
+		String senha = request.getParameter("senha");
+		String csenha = request.getParameter("csenha");
+		
+		String universidade = request.getParameter("universidade");
+		String RA = request.getParameter("RA");
+		String descricao = request.getParameter("descricao");
+		
+		String cod_pessoa = "0";
+		
+		if(request.getSession().getAttribute("cod_pessoa") != null){
+			cod_pessoa = request.getSession().getAttribute("cod_pessoa").toString();
+			System.out.println("codzada: " + cod_pessoa);
+		}
+		
+		//System.out.println("nome " + nome);
+		//System.out.println("email " + email);
+		//System.out.println("senha " + senha);
+		//System.out.println("csenha " + csenha);
+		//System.out.println("univer " + universidade);
+		//System.out.println("RA " + RA);
+		
+		String parametros;
+		
+		if(acao != null){
+		
+			if(acao.equals("editarPerfil")){
+				
+				if(!nome.equals("") && !email.equals("")){
+					parametros = "acao=" + "editarNomeEmailWeb" + "&nome=" + nome + "&email=" + email 
+							+ "&cod_pessoa="  + cod_pessoa;
+					
+					URL url = new URL("http://localhost:8080/ProjetoPsicologoBackEnd/ProcessaPessoa");
+					
+					HttpURLConnection con = (HttpURLConnection) url.openConnection();
+					
+					con.setRequestMethod("POST");
+					con.setDoOutput(true);
+					
+					DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+					wr.writeBytes(parametros);
+
+					BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+				}
+				
+				if(!senha.equals("") && senha.equals(csenha)){
+					System.out.println("senha braba");
+					
+					parametros = "acao=" + "editarSenhaWeb" + "&senha=" + senha
+							+ "&cod_pessoa="  + cod_pessoa;
+					
+					URL url = new URL("http://localhost:8080/ProjetoPsicologoBackEnd/ProcessaPessoa");
+					
+					HttpURLConnection con = (HttpURLConnection) url.openConnection();
+					
+					con.setRequestMethod("POST");
+					con.setDoOutput(true);
+					
+					DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+					wr.writeBytes(parametros);
+
+					BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));					
+				}
+			}
+			
+			if(acao.equals("editarPerfilEstagiario")){
+				
+				if(!universidade.equals("0")){
+					
+					parametros = "acao=" + "editarUniversidadeWeb" + "&universidade=" + universidade
+							+ "&cod_pessoa="  + cod_pessoa;
+					
+					URL url = new URL("http://localhost:8080/ProjetoPsicologoBackEnd/ProcessaPessoa");
+					
+					HttpURLConnection con = (HttpURLConnection) url.openConnection();
+					
+					con.setRequestMethod("POST");
+					con.setDoOutput(true);
+					
+					DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+					wr.writeBytes(parametros);
+
+					BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));	
+					
+				}
+				
+				if(!RA.equals("")){
+					
+					parametros = "acao=" + "editarRAWeb" + "&RA=" + RA
+							+ "&cod_pessoa="  + cod_pessoa;
+					
+					URL url = new URL("http://localhost:8080/ProjetoPsicologoBackEnd/ProcessaPessoa");
+					
+					HttpURLConnection con = (HttpURLConnection) url.openConnection();
+					
+					con.setRequestMethod("POST");
+					con.setDoOutput(true);
+					
+					DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+					wr.writeBytes(parametros);
+
+					BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));	
+					
+				}
+				
+				if(!descricao.equals("")){
+					
+					parametros = "acao=" + "editarDescricaoWeb" + "&descricao=" + descricao
+							+ "&cod_pessoa="  + cod_pessoa;
+					
+					URL url = new URL("http://localhost:8080/ProjetoPsicologoBackEnd/ProcessaPessoa");
+					
+					HttpURLConnection con = (HttpURLConnection) url.openConnection();
+					
+					con.setRequestMethod("POST");
+					con.setDoOutput(true);
+					
+					DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+					wr.writeBytes(parametros);
+
+					BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));	
+					
+				}
+				
+			}
+			
+		}
+		
 	%>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-none" id="navBar">
@@ -120,6 +250,7 @@
 					</li>
 					
                   	<%
+      					if(request.getSession().getAttribute("tipoPerf") != null){
                   		if(request.getSession().getAttribute("tipoPerf").toString().equals("1")){
                       				
                       	System.out.println("tipoPerf " + request.getSession().getAttribute("tipoPerf"));
@@ -127,20 +258,24 @@
                   	%>					
 					
 					<li class="nav-item">
-						<a class="nav-link" id="hd-tab" data-toggle="tab" href="#hd" role="tab" aria-controls="hd" aria-selected="true">
-							Horários/Descrição
+						<a class="nav-link" id="DadosEstagi-tab" data-toggle="tab" href="#dadosestagi" role="tab" aria-controls="dadosestagi" aria-selected="true">
+							Dados Estagiário
 						</a>
 					</li>
 					
 					<%
                   		}
+      					}
 					%>
 					
 				</ul>
 				
 				<%
 				
-					String parametros = "acao=" + "pegarPessoa" + "&cod_pessoa=" + request.getSession().getAttribute("cod_pessoa").toString();
+					if(request.getSession().getAttribute("tipoPerf") != null){
+					//System.out.println("jsp cod pessoa: " + request.getSession().getAttribute("cod_pessoa").toString());
+				
+					parametros = "acao=" + "pegarPessoa" + "&cod_pessoa=" + request.getSession().getAttribute("cod_pessoa").toString();
 				
 					URL url = new URL("http://localhost:8080/ProjetoPsicologoBackEnd/ProcessaPessoa");
 					
@@ -159,7 +294,7 @@
 					while ((linha = br.readLine()) != null) 
 						apnd += linha;
 					
-					//JSONObject obj = new JSONObject(apnd);
+					JSONObject obj = new JSONObject(apnd);
 				
 				%>
 				
@@ -167,68 +302,99 @@
 					<div class="tab-pane fade show active" id="perfil" role="tabpanel" aria-labelledby="perfil-tab">
 						<hr>
 						<form class="form" action="#" method="post">
+							
+							<input type="hidden" name="acao" value="editarPerfil">
 						
 							<div class="form-group">
                        			<div class="col-xs-6">
-                              		<label for="first_name"><h4>Nome</h4></label>
-                              		<input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                              		<label for="nome"><h4>Nome</h4></label>
+                              		<input type="text" value="<%=obj.get("nome") %>" class="form-control" name="nome" id="nome" placeholder="">
                           		</div>
                       		</div>
                       		
                       		<div class="form-group">
                             	<div class="col-xs-6">
                             		<label for="last_name"><h4>Email</h4></label>
-                              		<input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                              		<input type="text" value="<%=obj.get("email") %>" class="form-control" name="email" id="email" placeholder="">
                          	 	</div>
                       		</div>
                       		
                       		<div class="form-group">
                             	<div class="col-xs-6">
                             		<label for="last_name"><h4>Senha</h4></label>
-                              		<input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
-                         	 	</div>
-                      		</div>
-                      		
-                      		<%
-                      			if(request.getSession().getAttribute("tipoPerf").toString().equals("1")){
-                      				
-                      				System.out.println("tipoPerf " + request.getSession().getAttribute("tipoPerf"));
-                      				
-                      		%>
-                      		
-                      		<div class="form-group">
-                            	<div class="col-xs-6">
-			       					<div class="input-group mb-3">
-				       					<div class="input-group-prepend">
-				    						<label class="input-group-text" for="inputGroupUniversidade">Universidade :</label>
-				  						</div>
-				  						<select class="custom-select" id="inputGroupSexo" name="universidade">
-				  							<option value="0">Universidades</option>
-				    						<option value="1">Universidade 1</option>
-				    						<option value="2">Universidade 2</option>
-				  						</select>    
-			  						</div> 
+                              		<input type="password" class="form-control" name="senha" id="senha" placeholder="Nova Senha">
                          	 	</div>
                       		</div>
                       		
                       		<div class="form-group">
                             	<div class="col-xs-6">
-                            		<label for="last_name"><h4>RA</h4></label>
-                              		<input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                            		<label for="last_name"><h4>Confirmar Senha</h4></label>
+                              		<input type="password" class="form-control" name="csenha" id="csenha" placeholder="Nova Senha">
                          	 	</div>
                       		</div>
-                      		
-                      		<%
-                      			}
-                      		%>
+                     
+                      		<div class="form-group">
+	                           <div class="col-xs-12">
+	                                <br>
+	                              	<button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i>Salvar</button>
+	                               	<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i>Cancelar</button>
+	                            </div>
+                      		</div>
                       		
 						</form>
 					</div>
 				 	
-				 	<div class="tab-pane fade" id="hd" role="tabpanel" aria-labelledby="hd-tab">
-				 		HD
+				 	<div class="tab-pane fade" id="dadosestagi" role="tabpanel" aria-labelledby="hd-tab">
+				 		<hr>
+						<form class="form" action="#" method="post">
+						
+							<input type="hidden" name="acao" value="editarPerfilEstagiario">
+						
+					 		<div class="form-group">
+	                       		<div class="col-xs-6">
+				       				<div class="input-group mb-3">
+					       				<div class="input-group-prepend">
+					    					<label class="input-group-text" for="inputGroupUniversidade">Universidade :</label>
+					  					</div>
+					  					<select class="custom-select" id="inputGroupSexo" name="universidade">
+					  						<option value="0">Universidades</option>
+					    					<option value="1">Universidade 1</option>
+					    					<option value="2">Universidade 2</option>
+					  					</select>    
+				  					</div> 
+	                       		</div>
+	                      	</div>
+	                      		
+	                      	<div class="form-group">
+	                            <div class="col-xs-6">
+	                            	<label for="RA"><h4>RA</h4></label>
+	                              	<input type="text" value="<%=obj.get("RA") %>" class="form-control" name="RA" id="RA" placeholder="">
+	                         	</div>
+	                      	</div>	
+                      	
+                      		<div class="form-group">
+	                       		<div class="col-xs-6">
+	                       			<label for="last_name"><h4>Descrição</h4></label>
+	                       			<textarea rows="4" name="descricao" class="form-control"  placeholder=""
+											style="resize: none" maxlength="200"></textarea>    
+	                       		</div>
+	                       	</div>	
+	                       	
+                      	  	<div class="form-group">
+	                           <div class="col-xs-12">
+	                                <br>
+	                              	<button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i>Salvar</button>
+	                               	<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i>Cancelar</button>
+	                            </div>
+                      		</div>
+                      	
+                      	</form>
 				 	</div>
 				</div>
+				
+				<%
+					}
+                %>
 				
 			</div>
 		</div>

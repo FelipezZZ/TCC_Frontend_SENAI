@@ -238,7 +238,7 @@
 			  		
 			  			<div class="form-group">
 			  				<label for="inputUsernameEmail">Email :</label>
-         	 				<input type="text" name="email" class="form-control "placeholder="Digite seu email.." id="inputUsernameEmail">
+         	 				<input type="text" name="email" class="form-control" placeholder="Digite seu email.." id="inputUsernameEmail">
 			  			</div>
 			  			
 			  			<div class="form-group">

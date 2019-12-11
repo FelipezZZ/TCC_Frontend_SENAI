@@ -18,6 +18,13 @@
 <body>
 
 	<%
+		String sair = request.getParameter("sair");
+		if (sair != null) {
+			request.getSession().invalidate();
+			request.getSession().setAttribute("email", null);
+			response.sendRedirect("Administrador.jsp");
+		}
+	
 		String acao = request.getParameter("acao");
 		String cod_pessoaV = request.getParameter("cod_pessoaV");
 		
@@ -39,8 +46,43 @@
 		}
 	%>
 
+	<nav class="navbar navbar-expand-lg navbar-light bg-none" id="navBar">
+		<h1>ADMINISTRADOR</h1>
+		
+		<%
+			if (request.getSession().getAttribute("logado") != null) {
+		%>
+			
+				<form method="post" action="#">
+					<input type="hidden" name="sair" value="sair">
+					<div class="dropdown">
+						<button class="btn btn-danger dropdown-toggle" type="button"
+							id="btUser" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false">
+							<img src="imgs/user-icon.png" class="img-fluid" height="27"
+								width="27">
+						</button>
+						<div class="dropdown-menu" aria-labelledby="btUser"> 
+							<input type="submit" class="dropdown-item" value="sair" />
+						</div>
+					</div>
+				</form>			
+			
+			<%
+				}
+			%>
+		
+	</nav>
+	<p>
 	<div class="container-fluid" id="">
-		<input type="text" id="txtBusca" placeholder="Buscar... " />
+		<div class="row">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<input type="text" id="txtBusca" class="form-control" placeholder="Buscar... " />
+			</div>
+			<div class="col-2"></div>
+		</div>
+		<p>
 		<div class="row">
 			<div class="col-2"></div>
 			<div class="col-8">

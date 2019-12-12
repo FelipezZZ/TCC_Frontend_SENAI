@@ -1,3 +1,9 @@
+<%@page import="java.io.InputStreamReader"%>
+<%@page import="org.json.JSONObject"%>
+<%@page import="java.io.BufferedReader"%>
+<%@page import="java.io.DataOutputStream"%>
+<%@page import="java.net.HttpURLConnection"%>
+<%@page import="java.net.URL"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -87,20 +93,48 @@
 		</nav>
 
 		<center>
-			<button type="submit" id="btentrar" class="btn btn btn-primary" height="300" width="300" style="margin: auto; margin-top: 2%">Nova Anamnese</button>
+			<a href="DASS21.jsp"><button type="button" id="btentrar" class="btn btn btn-primary" height="300" width="300" style="margin: auto; margin-top: 2%">Nova Anamnese</button></a>
 		</center>	 
 		
 
+		<%
+			if(request.getSession().getAttribute("cod_pessoa") != null){
+				String parametros =	"cod_pessoa="+ request.getSession().getAttribute("cod_pessoa").toString() +
+						"&acao="+"listarAnamneses";
+				
+				URL url = new URL("http://localhost:8080/ProjetoPsicologoBackEnd/ProcessaPessoa");
+			
+				HttpURLConnection con = (HttpURLConnection) url.openConnection();
+	
+				con.setRequestMethod("POST");
+				con.setDoOutput(true);
+			
+				DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+				wr.writeBytes(parametros);
+			
+				BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+		
+				String linha = "";
+				JSONObject obj;
+				while ((linha = br.readLine()) != null) {
+				obj = new JSONObject(linha);
+		%>
+
 		<div class="card" style="width: 50rem; margin: auto; margin-top: 2%">
 			  <div class="card-header">
-			    <center>12/02/19</center>
+			    <center><%=obj.getString("dataAnamnese") %></center>
 			  </div>
 			  <ul class="list-group list-group-flush">
-			    <li class="list-group-item">Ansiedade: </li>
-			    <li class="list-group-item">Depressão: </li>
-			    <li class="list-group-item">Stress: </li>
+			    <li class="list-group-item">Ansiedade: <%=obj.getInt("a") %></li>
+			    <li class="list-group-item">Depressão: <%=obj.getInt("d") %></li>
+			    <li class="list-group-item">Stress: <%=obj.getInt("s") %></li>
 			  </ul>
 		</div>
+		<% 
+				}
+			}
+		%>
+		
 
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

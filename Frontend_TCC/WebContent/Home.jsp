@@ -81,28 +81,30 @@
 		</div>
 	</nav>	<center>
 	
+	
+	
 	<div class="card" style="width: 80rem; margin: auto; margin-top: 2%; padding:5%">
 	<div class="container">
   	
   	
 
-    <div class="row" style="background-color: #68ceee; height: 60px;"></div>
+   <!--  <div class="row" style="background-color: #6bbfb6; height: 60px;"></div>--> 
     <div class="row" style="margin-left:10%">
 
         <div class="col-md-5  promo-border" style="margin-top:60px;">
             <div class="promo-text"><img src="imgs/Logo.png" 
   		class="img-fluid" height="" width="60" id="logo"></div>
             <p style="font-family: calibri;
-  
+   font-size: 20px;
   margin-top: 30px;">
                 Como nosso Sistema funciona ?
             </p>
 
                 <p style=" font-family: calibri;
-  font-size: 14px;
+  font-size: 17px;
    
   
- padding: 10px;">Nosso aplicativo funciona como base para que estudantes de Psicologia, possam praticar, fazendo consultas grátis para pessoas necessitadas, com isso também os Estudantes podem abater seu tempo de Estágio</p>
+ padding: 10px;">Nosso aplicativo funciona como base para que estudantes de Psicologia, possam praticar, fazendo consultas grátis para pessoas necessitadas, com isso também os Estudantes podem abater seu tempo de Estágio.</p>
         </div>
         <div class="col-md-1 "></div>
        <div class="col-md-5  promo-border" style="margin-top:60px;">
@@ -115,12 +117,15 @@
             </p>
 
             <p style=" font-family: calibri;
-  font-size: 14px;
+  font-size: 17px;
   
-  padding: 10px;">Estudantes a partir do 4° termo da faculdade de psicologia, com seus documentos e matricula confirmada.
-  Como paciente : Qualquer pessoa que necessitar de ajuda, podendo até mesmo ser anônima. Caso contrário é necessario apenas realizar o Cadastro em nosso APP e aprovitar do nosso sistema seja na Web como no APP disponivel na PlayStore:
-  <a class="nav-item" href="https://play.google.com/store?hl=pt_BR">
-      				<button class="btn my-2 my-sm-0" type="button" id="btBaixar">Baixar Já</button>      			      			
+  padding: 10px;">Estudantes a partir do 4° termo da faculdade de psicologia, com seus documentos e matricula confirmada podem utilizar do nosso sistema.
+  <P>
+  Como paciente : Qualquer pessoa que necessitar de ajuda, podendo até mesmo ser anônimamente. Caso contrário é necessario apenas realizar o Cadastro em nosso APP e aprovitar do nosso sistema seja na Web como no APP disponivel na PlayStore:
+  <a class="nav-item" href=https://warface.uol.com.br/o-jogo/download>
+  <p>
+      				<button class="btn my-2 my-sm-0" type="button"  id="btBaixar">Baixar Já</button>   
+      				  <img src="imgs/iconBaixar.png" style="width: 10%">  			      			
 	    		</a>
   
         </div>
@@ -129,28 +134,27 @@
 
 
 </div>
-
-<div class="row" style="background-color: #68ceee; margin-top:80px; height: 60px;"></div>
+<p>
+<div class="row" style="background-color: #6bbfb6; margin-top:80px; height: 60px;"></div>
 <div class="footer">
     <div style="text-align: center; margin: 2px 50;">
         <img src="imgs/Logo.png" style="width: 3%">
+        
     </div>
     <p>
-    <div class="footerLinks">
-        <span class="footer-title"><a href="#/howitworks">Como Funciona</a></span>
-        <span class="footer-title"><a href="#/serviceoptions">Serviços</a></span>
-        <span class="footer-title"><a href="#/serviceoptions">Certificado</a></span>
-        
-        
-    </div>
-<p>
-    <div class="footerLinks">
-        <span class="footer-title"><a href="#/aboutluxe">Sobre Nós</a></span>
-        <span class="footer-title"><a href="#/faq">FAQ</a></span>
-        <span class="footer-title"><a href="#/contactluxe">Nos Contate</a></span>
-        <span class="footer-title"><a href="#/privacypolicy">Politica de Privacidade</a></span>
-        <span class="footer-title"><a href="#/termsofuse">Termos de Uso</a></span>
-    </div>
+<div class="footerLinks">
+        	<span class="footer-title"><a style="color: #6bbfb6" href="#/howitworks">Como Funciona</a></span>
+        	<span class="footer-title"><a style="color: #6bbfb6" href="#/serviceoptions">Serviços</a></span>
+        	<span class="footer-title"><a style="color: #6bbfb6" href="#/serviceoptions">Certificado</a></span>
+    	</div>
+    	<p>
+    	<div class="footerLinks">
+	        <span class="footer-title"><a style="color: #6bbfb6" href="#/aboutluxe">Sobre Nós</a></span>
+	        <span class="footer-title"><a style="color: #6bbfb6" href="#/faq">FAQ</a></span>
+	        <span class="footer-title"><a style="color: #6bbfb6" href="#/contactluxe">Nos Contate</a></span>
+	        <span class="footer-title"><a style="color: #6bbfb6" href="#/privacypolicy">Politica de Privacidade</a></span>
+	        <span class="footer-title"><a style="color: #6bbfb6" href="#/termsofuse">Termos de Uso</a></span>
+   		</div>
     <div style="padding-top:20px">
         <ul class="list-inline" style="text-align: center;">
             <li class="social-icons"><a href="https://pt-br.facebook.com/">

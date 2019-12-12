@@ -17,6 +17,7 @@
 </head>
 <body>
 
+
 	<%
 		String tipoperfil = request.getParameter("rbTipoperfil");
 		String nome = request.getParameter("nome");
@@ -54,39 +55,20 @@
 		}
 	%>
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-none" id="navBar">
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Alterna navegação">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
-	   <a class="navbar-brand" href="Home.jsp"><img src="imgs/Logo.png" 
-  		class="img-fluid" height="75" width="75" id="logo"></a>
-
-	
-	  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-	    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-	    </ul>
-	    
-	    <form class="form-inline my-2 my-lg-0">
-
-			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-	    		<a class="nav-item">
-       				<a class="nav-link" href="#" id="navItem">COMO FUNCIONA</a>
-      			</a>
-      			<a class="nav-item">
-       				<a class="nav-link" href="Login.jsp" id="navItem">ENTRAR</a>
-      			</a>
-      			<a class="nav-item">
-       				<a class="nav-link" href="Cadastro.jsp" id="navItem">CADASTRAR-SE</a>
-      			</a>
-      			<a class="nav-item" href="https://play.google.com/store/apps/details?id=com.dts.freefireth&hl=pt_BR">
-      				<button class="btn my-2 my-sm-0" type="button" id="btBaixar">BAIXAR</button>      			      			
-	    		</a>
-	    	</ul>
-	    </form>
-	    
-	    
-	  </div>
-	</nav>
+	<ul class="navbar-nav ml-auto ul-2">
+               <li class="nav-item">
+                  <a class="nav-link pagescroll" href="#como-funciona">Como Funciona</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link pagescroll" href="#por-que-usar">Por que Usar</a>
+               </li>     
+               <li class="nav-item">
+                  <a class="nav-link link1" href="https://www.orienteme.com.br/blog/">Blog</a>
+              </li>          
+               <li class="nav-item">
+                  <a class="nav-link button4" href="https://app.orienteme.com.br/Login/">ENTRAR</a>
+              </li>
+            </ul>
 			
 			<form method="post" action="#">
 			

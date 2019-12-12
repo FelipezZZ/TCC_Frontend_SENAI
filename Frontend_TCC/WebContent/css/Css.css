@@ -1,7 +1,3 @@
-@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
-@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
-@import url(http://fonts.googleapis.com/css?family=Titillium+Web&subset=latin,latin-ext);
-
 @CHARSET "ISO-8859-1";
 body {
 	background-size: 50%;
@@ -66,8 +62,8 @@ body {
 	color: white;
 	background-image: url("imgs/playstore.png");;
 	border: none;
-	height: 40px;
-	line-height: 40px;
+	height: 50px;
+	line-height: 50px;
 	padding: 0 50px;
 	cursor: pointer;
 	border-radius: 8px;

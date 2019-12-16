@@ -1,0 +1,57 @@
+DROP DATABASE forumjogos;
+CREATE DATABASE forumjogos;
+USE forumjogos;
+
+CREATE TABLE usuario(
+    cod_user INTEGER auto_increment primary key unique,
+    login VARCHAR(16) not null,
+    senha VARCHAR(20) not null,
+    nome VARCHAR(60) not null,
+    genero VARCHAR(1) not null,
+    discord VARCHAR(50) not null,
+    registro DATE not null
+	    
+);
+
+CREATE TABLE jogos(
+    cod_jogo INTEGER auto_increment primary key, 
+    jogo VARCHAR(252) not null
+);
+
+INSERT INTO jogos(cod_jogo,jogo) VALUES (0,"League of legends");
+INSERT INTO jogos(cod_jogo,jogo) VALUES (0,"Yugi-oh");
+INSERT INTO jogos(cod_jogo,jogo) VALUES (0,"Minecraft");
+
+CREATE TABLE posts(
+    cod_post INTEGER auto_increment primary key,
+    cod_jogo INTEGER not null,
+    constraint fkCodJogo foreign key (cod_jogo) references jogos(cod_jogo),
+    data_post date not null,
+    conteudo VARCHAR(300) not null,
+    titulo VARCHAR(30) not null,
+    cod_autor INTEGER not null,
+    constraint fkAutor foreign key (cod_autor) references usuario(cod_user)
+);
+
+CREATE TABLE comentarios(
+    cod_comentario INTEGER auto_increment PRIMARY KEY,
+    cod_post INTEGER not null,
+    constraint fkCodPost foreign key (cod_post) references posts(cod_post),
+    data_comentario date not null,
+    cod_autor INTEGER not null,
+    constraint fkAutorComentario foreign key (cod_autor) references usuario(cod_user),
+    conteudo VARCHAR(152) not null
+);
+
+
+CREATE TABLE respostas(
+    cod_resposta INTEGER auto_increment PRIMARY KEY,
+    cod_comentario integer not null,
+	cod_autor integer not null,
+    constraint fkCodComentario foreign key (cod_comentario) references comentarios(cod_comentario),
+    cod_post INTEGER not null,
+    constraint fkCodPostResposta foreign key (cod_post) references posts(cod_post),
+	constraint fkAutorResposta foreign key (cod_autor) references usuario(cod_user),
+    conteudo varchar(80),
+    data_resposta date not null
+);

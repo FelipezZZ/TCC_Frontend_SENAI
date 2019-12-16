@@ -116,8 +116,52 @@
 		
 				String linha = "";
 				JSONObject obj;
-				while ((linha = br.readLine()) != null) {
+				
+				String a = "", d ="", s="";
+				while ((linha = br.readLine()) != null) {	
 				obj = new JSONObject(linha);
+				int ia = obj.getInt("a"), id = obj.getInt("d"), is = obj.getInt("s");
+				
+				if(obj.getInt("a") < 8){
+					a = "Normal";
+				}else if(ia > 7 && ia < 10){
+					a = "Suave";
+				}else if(ia > 9 && ia < 15){
+					a = "Moderada";
+				}else if(ia > 14 && ia < 20){
+					a = "Grave";
+				}else if(ia > 19){
+					a = "Extremamente Grave";
+				}
+				
+				if(obj.getInt("d") < 10){
+					d = "Normal";
+				}else if(id > 9 && id < 14){
+					d = "Suave";
+				}else if(id > 13 && id < 21){
+					d = "Moderada";
+				}else if(id > 20 && id < 28){
+					d = "Grave";
+				}else if(id > 27){
+					d = "Extremamente Grave";
+				}
+				
+				if(obj.getInt("s") < 15){
+					s = "Normal";
+				}else if(is > 14 && is < 19){
+					s = "Suave";
+				}else if(is > 18 && is < 26){
+					s = "Moderada";
+				}else if(is > 25 && is < 34){
+					s = "Grave";
+				}else if(is > 33){
+					s = "Extremamente Grave";
+				}
+				
+				JSONObject obj2 = new JSONObject(linha);
+				obj2.put("a", a);
+				obj2.put("d", d);
+				obj2.put("s", s);
 		%>
 
 		<div class="card" style="width: 50rem; margin: auto; margin-top: 2%">
@@ -125,9 +169,9 @@
 			    <center><%=obj.getString("dataAnamnese") %></center>
 			  </div>
 			  <ul class="list-group list-group-flush">
-			    <li class="list-group-item">Ansiedade: <%=obj.getInt("a") %></li>
-			    <li class="list-group-item">Depressão: <%=obj.getInt("d") %></li>
-			    <li class="list-group-item">Stress: <%=obj.getInt("s") %></li>
+			    <li class="list-group-item">Ansiedade: <%=obj2.getString("a") %></li>
+			    <li class="list-group-item">Depressão: <%=obj2.getString("d") %></li>
+			    <li class="list-group-item">Stress: <%=obj2.getString("s") %></li>
 			  </ul>
 		</div>
 		<% 

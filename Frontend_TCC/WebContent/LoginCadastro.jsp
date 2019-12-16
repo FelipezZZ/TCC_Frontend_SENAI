@@ -109,7 +109,7 @@
 			}
 			
 			
-			if(acao.equals("loginWeb")){
+			if(acao.equals("loginWeb") && senha != ""){
 				parametros = "email=" + email + "&senha=" + senha + "&acao=" + acao;
 				
 				URL url = new URL("http://localhost:8080/ProjetoPsicologoBackEnd/ProcessaPessoa");
